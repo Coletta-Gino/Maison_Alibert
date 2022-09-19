@@ -1,0 +1,41 @@
+{
+    "name": "gino/projet-maison_alibert",
+    "autoload": {
+        "psr-4": {
+            "Gino\\ProjetMaisonAlibert\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Coletta-Gino",
+            "email": "gino3869.co@hotmail.com"
+        }
+    ],
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "*",
+        "wpackagist-theme/twentytwenty": "*",
+        "wpackagist-plugin/akismet": "*",
+        "wpackagist-plugin/advanced-custom-fields": "*",
+        "wpackagist-plugin/advanced-custom-fields-font-awesome": "*",
+        "wpackagist-plugin/wordpress-seo": "*"
+    },
+    "extra" : {
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "content/themes/{$name}": ["type:wordpress-theme"],
+            "content/plugins/{$name}": ["type:wordpress-plugin"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    }
+}
