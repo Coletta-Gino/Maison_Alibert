@@ -8,9 +8,9 @@
 
 <body>
   <!-- Header -->
-  <header>
-    <?php get_template_part('template-parts/header/events'); ?>
+  <header style="width: 100%; color: #f0eae2; background-color: #1d616c; padding: 1em 2em">
     <?php get_template_part('template-parts/header/nav'); ?>
+    <?php get_template_part('template-parts/header/events'); ?>
   </header>
 
   <!-- Main -->
