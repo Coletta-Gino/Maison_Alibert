@@ -1,0 +1,22 @@
+//////////////// HEADER ////////////////
+header {
+  position: relative;
+  width: 100%;
+  color: $alabaster;
+  background-color: $blue-sapphire;
+  // padding: 1em 1em 0.5em;
+}
+  
+// Tablet
+// @media screen and (min-width: $breakpoint-small) {
+//   header {
+//     padding: 0.5em 1.5em;
+//   }
+// }
+  
+// Desktop
+// @media screen and (min-width: $breakpoint-medium) {
+//   header {
+//     padding: 1em 2em;
+//   }
+// }

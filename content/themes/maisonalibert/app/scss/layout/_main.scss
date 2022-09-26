@@ -1,0 +1,21 @@
+//////////////// MAIN ////////////////
+main {
+  position: relative;
+  width: 100%;
+  margin-top: 10em;
+  padding: 2em;
+}
+  
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    padding: 2.5em;
+  }
+}
+  
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    padding: 3em;
+  }
+}

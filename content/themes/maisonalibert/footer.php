@@ -1,8 +1,15 @@
   </main>
 
   <!-- Footer -->
-  <footer style="width: 100%; color: #f0eae2; background-color: #1d616c; padding: 1em 2em">
+  <footer>
     <div>
+      <?php 
+        // TODO => be careful to change the value of $attachment_id = the id of the logo's picture !!!
+        // $image_attributes = wp_get_attachment_image_src($attachment_id = 8);
+        // $alt_text = get_post_meta(8, '_wp_attachment_image_alt', true);
+      ?>
+  
+      <!-- <img src="<?php // echo $image_attributes[0]; ?>" alt="<?php // echo $alt_text; ?>" /> -->
       <img src="" alt="Logo (Simplifié)">
     </div>
 

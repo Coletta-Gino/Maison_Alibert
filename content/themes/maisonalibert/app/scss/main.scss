@@ -1,15 +1,34 @@
 @charset 'UTF-8';
 
 // 1. Abstracts
+@import 
+  // 'abstracts/mixins',
+  'abstracts/vars';
 
 // 2. Vendors
 @import 
   '~font-awesome/scss/font-awesome';
 
 // 3. Base
+@import
+  'base/animations',
+  'base/base';
+  // 'base/typography';
 
 // 4. Layout
+@import
+  'layout/footer',
+  'layout/header',
+  'layout/main',
+  'layout/navigation';
 
 // 5. Components
+@import
+  'components/events';
 
 // 6. Pages
+// @import
+//   'pages/errors',
+//   'pages/faq',
+//   'pages/legal-mentions',
+//   'pages/results';

@@ -1,0 +1,45 @@
+// Variables (fonts, colors, sizes, breakpoints, ...)
+// Fonts + Font Awesome 4.7.0 Icons
+$fa-font-path: '~font-awesome/fonts';
+// $font-family-title: 'Raleway', sans-serif;
+// $font-family-content: 'Merriweather', serif;
+
+// Colors
+$blue-sapphire: hsl(188, 58%, 27%); // or rgb(29, 97, 108), or #1d616c
+$alabaster: hsl(34, 32%, 91%); // or rgb(240, 234, 226), or #f0eae2
+$nickel: hsl(0, 0%, 45%); // or rgb(115, 115, 115), or #737373
+$chinese-black: hsl(214, 32%, 9%); // or rgb(15, 21, 29), or #0f151d
+$ruddy-pink: hsl(8, 58%, 73%); // or rgb(226, 158, 147), or #e29e93
+
+// Shadow
+// $box-shadow-circle: inset -3px -3px 7px 2.5px rgba($cream-coffee, 0.1);
+// $box-shadow-product: 1.5px 2.5px 2.5px 5.5px rgba($black, 0.15);
+
+// Transitions Durations
+$transition-medium: 0.5s;
+$transition-slow: 0.7s;
+
+// Borders
+// $border: 1px solid rgba($white, 0.4);
+// $border-right-bottom: 1px solid rgba($white, 0.2);
+
+// Glassmorphism Style
+// $glass: rgba($white, 0.05);
+
+// Hover Effects
+// $glass-hover: skewX(45deg) translateX(-150px);
+$size-hover: 100% 100%;
+
+// Mobile
+// $translateY-mobile: translateY(-10px);
+
+// Tablet
+// $translateY-tablet: translateY(-15px);
+
+// Desktop
+// $translateY-desktop: translateY(-20px);
+
+// Breakpoints
+$breakpoint-small: 768px;
+$breakpoint-medium:	992px;
+// $breakpoint-large: 1200px;

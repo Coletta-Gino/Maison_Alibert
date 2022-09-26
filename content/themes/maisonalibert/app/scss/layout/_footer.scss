@@ -1,0 +1,28 @@
+//////////////// FOOTER ////////////////
+footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  color: $alabaster;
+  background-color: $blue-sapphire;
+  padding: 1em 1em 0.5em;
+}
+  
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 1.5em;
+  }
+}
+  
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  footer {
+    padding: 1em 2em;
+  }
+}
