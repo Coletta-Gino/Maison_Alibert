@@ -8,6 +8,31 @@
 body {
   overflow-x: hidden;
 }
+
+h1,
+h2 {
+  width: 100%;
+  font-size: 3em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $blue-sapphire;
+  text-shadow: 3px 3px 2px rgba(240, 234, 226, 0.5);
+  font-family: "Balgor Regular";
+
+  &::before {
+    content: '';
+    width: 10%;
+    height: 10px;
+    background-color: $blue-sapphire;
+    box-shadow: 5px 5px 10px -1px rgb(0 0 0 / 25%), -5px -5px 10px -1px rgb(255 255 255 / 75%);
+  }
+}
+
+p {
+  color: $nickel;
+  margin: 1em 0 3em;
+}
   
 // h1 {
 //   width: 100%;

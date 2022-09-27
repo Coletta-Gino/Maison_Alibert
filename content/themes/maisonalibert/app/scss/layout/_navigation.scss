@@ -1,13 +1,11 @@
 /////////////// Navbar ///////////////
 header {
   nav {
-    // background-color: $blue-sapphire;
-    position: fixed;
-    left: 0;
     width: 100%;
+    min-height: 8vh;
     display: flex;
     align-items: center;
-    min-height: 8vh;
+    background-color: red;
     padding: 25px 50px;
     transition: $transition-medium;
     z-index: 99;
@@ -96,6 +94,7 @@ header {
   
     /////// Sticky Mod ///////
     &.sticky {
+      position: fixed;
       top: 0;
       left: 0;
       justify-content: space-between;
