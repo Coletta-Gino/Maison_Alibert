@@ -1,5 +1,5 @@
   <!-- Best Sellers -->
-  <section class="">
+  <section class="best-sellers">
     <?php  
       $args = [
         'post_type' => 'post',

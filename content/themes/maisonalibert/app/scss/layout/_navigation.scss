@@ -5,13 +5,15 @@ header {
     min-height: 8vh;
     display: flex;
     align-items: center;
-    background-color: red;
+    background-color: transparent;
     padding: 25px 50px;
     transition: $transition-medium;
     z-index: 99;
   
     .logo {
       position: relative;
+      width: 100px;
+      height: auto;
       // top: 50%;
       // left: 50%;
       // transform: translateX(-50%);
@@ -19,8 +21,8 @@ header {
   
       a {
         img {
-          width: 100px;
-          height: 168px;
+          width: 100%;
+          height: auto;
           // transition: $transition-slow;
         }
       }
@@ -140,14 +142,10 @@ header {
 @media screen and (min-width: $breakpoint-small) {
   header {
     nav {
-      // .logo {
-        // a {
-          // img {
-            // width: 125px;
-            // height: 125px;
-          // }
-        // }
-      // }
+      .logo {
+        width: 125px;
+        height: auto;
+      }
         
       ///// Menu Items /////
       .nav-links {
@@ -205,7 +203,9 @@ header {
 @media screen and (min-width: $breakpoint-medium) {
   header {
     nav {
-      // .logo {
+      .logo {
+        width: 150px;
+        height: auto;
         // transition: 1s;
   
         // a {
@@ -215,7 +215,7 @@ header {
             // transition: 1s;
           // }
         // }
-      // }
+      }
   
       /////// Sticky Mod ///////
       &.sticky {

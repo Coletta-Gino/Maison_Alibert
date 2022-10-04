@@ -1,5 +1,5 @@
   <!-- Skills -->
-  <section class="">
+  <section class="skills">
     <?php  
       $args = [
         'post_type' => 'post',

@@ -20,11 +20,14 @@
   'layout/footer',
   'layout/header',
   'layout/main',
-  'layout/navigation';
+  'layout/navigation',
+  'layout/wrapper';
 
 // 5. Components
 @import
-  'components/events';
+  'components/events',
+  'components/section',
+  'components/simplified-logo';
 
 // 6. Pages
 // @import
