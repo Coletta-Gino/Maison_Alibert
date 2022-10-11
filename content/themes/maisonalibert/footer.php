@@ -1,7 +1,13 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <?php 
+      // TODO => be careful to change the value of $attachment_id = the id of the background's picture !!!
+      $image_attributes = wp_get_attachment_image_src(36, 'full'); // original background
+      // $image_attributes = wp_get_attachment_image_src(40, 'full'); // blue background
+    ?>
+
+    <footer style="background-image: url('<?= $image_attributes[0]; ?>');">
       <?php get_template_part('template-parts/footer/simplified-logo'); ?>
 
       <ul>

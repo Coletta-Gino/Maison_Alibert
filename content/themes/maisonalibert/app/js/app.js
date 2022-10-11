@@ -8,6 +8,12 @@ var app = {
       navigation.classList.toggle('sticky', window.scrollY > 0);
     });
 
+    /////////////// Header Style ///////////////
+    window.addEventListener('scroll', () => {
+      var triangle = document.querySelector('.triangle');
+      triangle.classList.toggle('resized', window.scrollY > 0);
+    });
+
     /////////////// Swipe Menu ///////////////
     navSlide = () => {
       var burger = document.querySelector('.burger');

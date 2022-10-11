@@ -2,9 +2,64 @@
 header {
   position: relative;
   width: 100%;
-  // color: $alabaster;
-  // background-color: $blue-sapphire;
-  // padding: 1em 1em 0.5em;
+  // clip-path: polygon(100% 47%, 100% 0%, 0% 0%, 0% 100%);
+  padding-bottom: 60px;
+  // transition: clip-path 1s;
+  z-index: 10;
+
+  // Triangle On Header To Crop Background
+  .triangle {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    // display : inline-block;
+    // width : 0;
+    // height : 0;
+    border-bottom : 150px solid $alabaster;
+    border-left : 320px solid transparent;
+    transition: border 1s;
+
+    &.resized {
+      border-bottom : 125px solid $alabaster;
+      border-left : 270px solid transparent;
+      transition: border 1s;
+    }
+  }
+
+  // Single Triangle On Header
+  // .triangle {
+  //   content: '';
+  //   position: absolute;
+  //   // display : inline-block;
+  //   // width : 0;
+  //   // height : 0;
+  //   border-top : 125px solid $blue-sapphire;
+  //   border-right : 160px solid transparent;
+  //   border-left : 160px solid transparent;
+  // }
+
+  // Header Triangle Using Clip-Path
+  // &.resized {
+  //   clip-path: polygon(100% 18%, 100% 0%, 0% 0%, 0% 38%); 
+  //   transition: clip-path 1s;
+  // }
+
+  // Linear Gradient On Backgound
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      168deg,
+      transparentize($blue-sapphire, 0),
+      transparentize($blue-sapphire, 1)
+    );
+    z-index: -1;
+  }
 }
   
 // Tablet
