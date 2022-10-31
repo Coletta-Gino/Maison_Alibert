@@ -7,10 +7,11 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   color: $alabaster;
-  // background-color: $blue-sapphire;
+  background-color: $blue-sapphire;
   padding: 1em 1em 0.5em;
   z-index: 10;
 
+  // Linear Gradient
   // &::before {
   //   content: '';
   //   position: absolute;
@@ -24,29 +25,31 @@ footer {
   //   z-index: -1;
   // }
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -125px;
-    left: 0;
-    // display : inline-block;
-    // width : 0;
-    // height : 0;
-    border-right : 160px solid transparent;
-    border-bottom : 125px solid $blue-sapphire;
-  }
+  // Triangle Left
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: -125px;
+  //   left: 0;
+  //   // display : inline-block;
+  //   // width : 0;
+  //   // height : 0;
+  //   border-right : 160px solid transparent;
+  //   border-bottom : 125px solid $blue-sapphire;
+  // }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: -125px;
-    right: 0;
-    // display : inline-block;
-    // width : 0;
-    // height : 0;
-    border-left : 160px solid transparent;
-    border-bottom : 125px solid $blue-sapphire;
-  }
+  // Triangle Right
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: -125px;
+  //   right: 0;
+  //   // display : inline-block;
+  //   // width : 0;
+  //   // height : 0;
+  //   border-left : 160px solid transparent;
+  //   border-bottom : 125px solid $blue-sapphire;
+  // }
 }
   
 // Tablet
