@@ -3,127 +3,29 @@
     <h1><?php the_title(); ?></h1>
   <?php endwhile; endif; ?>
 
+  <!-- Sorting system -->
   <!-- Categories -->
-  <button class="sorting">sort</button>
-  <button class="filtering">filters</button>
+  <!-- <section class="sort">
+    <a href="index.php?order=espèce">
+      <span>par espèce</span>
+      <div class="wave"></div>
+    </a>
 
-  <div class="container">
-    <article class="product">
-      <div class="product__image">
-        <img src="" alt="">
-      </div>
+    <a href="index.php?order=nombre">
+      <span>par nombre</span>
+      <div class="wave"></div>
+    </a> -->
 
-      <div class="product__infos">
-        <h3>Product name</h3>
+    <!-- Si un tri a été appliqué, on ajoute un bouton pour l'annuler et revenir à l'état de base -->
+    <!-- <?php if (isset($_GET['order'])) : ?>
+      <a href="index.php">
+        <span>annuler le tri</span>
+        <div class="wave"></div>
+      </a>
+    <?php endif; ?>
+  </section> -->
 
-        <div class="product__infos__colors">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <p class="product__infos__price">12,99 €</p>
-
-        <a href="#" class="view-more">View more</a>
-      </div>
-    </article>
-
-    <article class="product">
-      <div class="product__image">
-        <img src="" alt="">
-      </div>
-
-      <div class="product__infos">
-        <h3>Product name</h3>
-
-        <div class="product__infos__colors">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <p class="product__infos__price">12,99 €</p>
-
-        <a href="#" class="view-more">View more</a>
-      </div>
-    </article>
-
-    <article class="product">
-      <div class="product__image">
-        <img src="" alt="">
-      </div>
-
-      <div class="product__infos">
-        <h3>Product name</h3>
-
-        <div class="product__infos__colors">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <p class="product__infos__price">12,99 €</p>
-
-        <a href="#" class="view-more">View more</a>
-      </div>
-    </article>
-
-    <article class="product">
-      <div class="product__image">
-        <img src="" alt="">
-      </div>
-
-      <div class="product__infos">
-        <h3>Product name</h3>
-
-        <div class="product__infos__colors">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <p class="product__infos__price">12,99 €</p>
-
-        <a href="#" class="view-more">View more</a>
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- Get all the children categories -->
   <!-- <section class="categories">
     <button class="selected">Tous</button> -->
 
@@ -145,19 +47,98 @@
     ?>
   <!-- </section> -->
 
-  <!-- <div class="container"> -->
+  <button class="sorting">sort</button>
+  <button class="filtering">filters</button>
+
+  <div class="container">
     <?php  
       $args = [
         'post_type' => 'post',
-        'category_name' => 'ephemeral',
-        'orderby' => 'rand',
+        'category_name' => 'products',
       ];
           
       $wpqueryArticles = new WP_Query($args);
     ?>
 
     <?php if ($wpqueryArticles->have_posts()): while ($wpqueryArticles->have_posts()): $wpqueryArticles->the_post(); ?>
-      <?php get_template_part('template-parts/products/ephemerals'); ?>
-    <?php endwhile; endif; ?>    
-  <!-- </div> -->
+      <a href="<?= home_url() . '/produits' . '/?=' . get_the_ID(); ?>" class="product">
+        <div class="product__image">
+          <!-- <img src="" alt=""> -->
+          <?php the_post_thumbnail(); ?>
+        </div>
+
+        <div class="product__infos">
+          <div class="product__infos__rating">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-half" aria-hidden="true"></i>
+          </div>
+
+          <!-- <h3>Product name</h3> -->
+          <h3><?php the_title(); ?></h3>
+
+          <div class="product__infos__colors">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <p class="product__infos__price">12,99 €</p>
+
+          <!-- <a href="#" class="view-more">View more</a> -->
+        </div>
+      </a>
+
+      <?php // get_template_part('template-parts/products/details'); ?>
+    <?php endwhile; endif; ?>
+  
+          
+
+
+
+
+
+
+
+
+
+    <!-- TODO 0 : dynamization -->
+    <!-- TODO 1 : create loop with foreach -->
+    <!-- TODO 2 : link to the id of each article (href="[page-title].php?id= -->
+    <!-- <a class="product">
+      <div class="product__image">
+        <img src="" alt="">
+      </div>
+
+      <div class="product__infos">
+        <div class="product__infos__rating">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star-half" aria-hidden="true"></i>
+        </div>
+
+        <h3>Product name</h3>
+
+        <div class="product__infos__colors">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <p class="product__infos__price">12,99 €</p>
+
+        <a href="#" class="view-more">View more</a>
+      </div>
+    </a> -->
+  </div>    
 <?php get_footer(); ?>

@@ -14,8 +14,8 @@ main {
                   inset 10px 10px 20px #ffffff,
                   2px 2px 4px #ccc7c0,
                   -2px -2px 4px #ffffff;
-      padding: 1em;
-      margin: 1em 0;
+      padding: 1em 1em 0;
+      margin-top: 1em;
       border-radius: 25px;
 
       &__image {
@@ -37,6 +37,7 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 1em;
 
         h3 {
           margin: 1em 0;
@@ -68,8 +69,8 @@ main {
   main {
     .container {
       .product {
-        padding: 1.5em;
-        margin: 1.5em 0;
+        padding: 1.5em 1.5em 0;
+        margin-top: 1.5em;
   
         &__image {
           width: 175px;
@@ -101,8 +102,8 @@ main {
   main {
     .container {
       .product {
-        padding: 2em;
-        margin: 2em 0;
+        padding: 2em 2em 0;
+        margin-top: 2em;
   
         &__image {
           width: 225px;
