@@ -61,55 +61,12 @@
     ?>
 
     <?php if ($wpqueryArticles->have_posts()): while ($wpqueryArticles->have_posts()): $wpqueryArticles->the_post(); ?>
-      <a href="<?= home_url() . '/produits' . '/?=' . get_the_ID(); ?>" class="product">
-        <div class="product__image">
-          <!-- <img src="" alt=""> -->
-          <?php the_post_thumbnail(); ?>
-        </div>
-
-        <div class="product__infos">
-          <div class="product__infos__rating">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star-half" aria-hidden="true"></i>
-          </div>
-
-          <!-- <h3>Product name</h3> -->
-          <h3><?php the_title(); ?></h3>
-
-          <div class="product__infos__colors">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-
-          <p class="product__infos__price">12,99 €</p>
-
-          <!-- <a href="#" class="view-more">View more</a> -->
-        </div>
-      </a>
-
-      <?php // get_template_part('template-parts/products/details'); ?>
+      <?php get_template_part('template-parts/products/test'); ?>
     <?php endwhile; endif; ?>
-  
-          
 
-
-
-
-
-
-
-
-
-    <!-- TODO 0 : dynamization -->
-    <!-- TODO 1 : create loop with foreach -->
-    <!-- TODO 2 : link to the id of each article (href="[page-title].php?id= -->
+    <!-- TODO 0 : dynamization (WIP) -->
+    <!-- TODO 1 : create loop with foreach (check) -->
+    <!-- TODO 2 : link to the id of each article (href="[page-title].php?id= (check) -->
     <!-- <a class="product">
       <div class="product__image">
         <img src="" alt="">
