@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbc5f3472709e64088861b3a52a40c6a",
+    "content-hash": "98f1ffa2e1edfd391b6513500be4202d",
     "packages": [
         {
             "name": "composer/installers",
@@ -354,24 +354,6 @@
             "homepage": "https://wordpress.org/plugins/akismet/"
         },
         {
-            "name": "wpackagist-plugin/use-any-font",
-            "version": "6.2.95",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/use-any-font/",
-                "reference": "tags/6.2.95"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/use-any-font.6.2.95.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/use-any-font/"
-        },
-        {
             "name": "wpackagist-plugin/wordpress-seo",
             "version": "19.6.1",
             "source": {
@@ -388,6 +370,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-carousel-free",
+            "version": "2.5.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-carousel-free/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-carousel-free.zip?timestamp=1668157104"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-carousel-free/"
         },
         {
             "name": "wpackagist-theme/twentytwenty",

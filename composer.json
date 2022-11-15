@@ -23,7 +23,8 @@
         "wpackagist-plugin/akismet": "*",
         "wpackagist-plugin/advanced-custom-fields": "*",
         "wpackagist-plugin/advanced-custom-fields-font-awesome": "*",
-        "wpackagist-plugin/wordpress-seo": "*"
+        "wpackagist-plugin/wordpress-seo": "*",
+        "wpackagist-plugin/wp-carousel-free": "*"
     },
     "extra" : {
         "wordpress-install-dir": "wp",

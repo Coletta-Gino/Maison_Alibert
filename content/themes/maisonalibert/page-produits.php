@@ -61,7 +61,7 @@
     ?>
 
     <?php if ($wpqueryArticles->have_posts()): while ($wpqueryArticles->have_posts()): $wpqueryArticles->the_post(); ?>
-      <?php get_template_part('template-parts/products/test'); ?>
+      <?php get_template_part('template-parts/products/article'); ?>
     <?php endwhile; endif; ?>
 
     <!-- TODO 0 : dynamization (WIP) -->

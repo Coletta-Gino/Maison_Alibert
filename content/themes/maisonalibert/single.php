@@ -7,13 +7,22 @@
       <?php endwhile; endif; ?>
 
       <div class="pictures">
-        <div class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+        <!-- <div class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div> -->
         <div class="main-picture">
           <img src="" alt="">
         </div>
-        <div class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        <!-- <div class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div> -->
 
         <div class="secondaries-pictures">
+          <?php echo do_shortcode('[sp_wpcarousel id="50"]'); ?>
+
+          <style>
+            .swiper-slide-active {
+              padding: 50px;
+              border: solid 5px red;
+            }
+          </style>
+
           <div class="box"></div>
           <div class="box"></div>
           <div class="box"></div>
