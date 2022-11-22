@@ -1,0 +1,11 @@
+.reviews-by-stars {
+  .five-stars,
+  .four-stars,
+  .three-stars,
+  .two-stars,
+  .one-star {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

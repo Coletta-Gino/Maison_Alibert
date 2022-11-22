@@ -14,13 +14,35 @@
     <div class="colors">
       <p>Disponible en :</p>
       
-      <div class="product__infos__colors">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <!-- <div class="product__infos__colors"> -->
+      <div class="colors-available">
+        <style>
+          .colors-available {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+          }
+
+          .colors-available div {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px 10px 5px;
+            border-radius: 7px;
+          }
+        </style>
+        
+        <?php 
+          $fields = get_field_objects();
+
+          if ($fields) : ?>
+            <?php foreach($fields as $field) : ?>
+              <?php if ($field['value']) : ?>
+                <div style="background-color:<?= $field['value']; ?>"></div>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          <?php endif; ?>
       </div>
     </div>
 
@@ -30,8 +52,10 @@
   </section>
 
   <section class="comments-area">
-    <div class="card">
-      <h2>average / 5</h2>
+    <!-- <div class="card"> -->
+      <h2>Avis</h2>
+
+      <h3><span id="average">average</span> / 5</h3>
 
       <div class="rating">
         <i class="fa fa-star" aria-hidden="true"></i>
@@ -47,33 +71,34 @@
 
       <div class="reviews-by-stars">
         <div class="five-stars">
-          <p>5 stars</p>
-          <div class="progress-bar"></div>
-          <p class="number-of-reviews">(number of 5 stars reviews)</p>
+          <p>5 <i class="fa fa-star" aria-hidden="true"></i></p>
+          <!-- <div class="progress-bar"></div> -->
+          <progress class="progress" id="five-stars__progress" value="16.666666666666664" max="100"></progress>
+          <p class="number-of-reviews">(<span id="total_five_stars_review">number</span>)</p>
         </div>
 
         <div class="four-stars">
-          <p>4 stars</p>
-          <div class="progress-bar"></div>
-          <p class="number-of-reviews">(number of 4 stars reviews)</p>
+          <p>4 <i class="fa fa-star" aria-hidden="true"></i></p>
+          <progress class="progress" id="five-stars__progress" value="0" max="100"></progress>
+          <p class="number-of-reviews">(<span id="total_four_stars_review">number</span>)</p>
         </div>
 
         <div class="three-stars">
-          <p>3 stars</p>
-          <div class="progress-bar"></div>
-          <p class="number-of-reviews">(number of 3 stars reviews)</p>
+          <p>3 <i class="fa fa-star" aria-hidden="true"></i></p>
+          <progress class="progress" id="five-stars__progress" value="0" max="100"></progress>
+          <p class="number-of-reviews">(<span id="total_three_stars_review">number</span>)</p>
         </div>
 
         <div class="two-stars">
-          <p>2 stars</p>
-          <div class="progress-bar"></div>
-          <p class="number-of-reviews">(number of 2 stars reviews)</p>
+          <p>2 <i class="fa fa-star" aria-hidden="true"></i></p>
+          <progress class="progress" id="five-stars__progress" value="0" max="100"></progress>
+          <p class="number-of-reviews">(<span id="total_two_stars_review">number</span>)</p>
         </div>
 
         <div class="one-star">
-          <p>1 star</p>
-          <div class="progress-bar"></div>
-          <p class="number-of-reviews">(number of 1 star reviews)</p>
+          <p>1 <i class="fa fa-star" aria-hidden="true"></i></p>
+          <progress class="progress" id="five-stars__progress" value="0" max="100"></progress>
+          <p class="number-of-reviews">(<span id="total_one_star_review">number</span>)</p>
         </div>
       </div>
 
@@ -103,6 +128,6 @@
           <p class="review-date">On monday 14th, november 2022 16:23:42 AM</p>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </section>
 <?php get_footer(); ?>

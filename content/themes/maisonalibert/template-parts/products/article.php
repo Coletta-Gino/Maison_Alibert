@@ -37,12 +37,16 @@
 		      <?php endif; ?>
 
           <div class="product__infos__colors">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <?php 
+              $fields = get_field_objects();
+
+              if ($fields) : ?>
+                <?php foreach($fields as $field) : ?>
+                  <?php if ($field['value']) : ?>
+                    <div style="background-color:<?= $field['value']; ?>"></div>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              <?php endif; ?>
           </div>
 
           <p class="product__infos__price">12,99 €</p>
