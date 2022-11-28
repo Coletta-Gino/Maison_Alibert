@@ -38,17 +38,23 @@
 
           <div class="product__infos__colors">
             <?php 
-              $fields = get_field_objects();
+              $colors = array(
+                get_field_object('color_1'),
+                get_field_object('color_2'),
+                get_field_object('color_3'),
+                get_field_object('color_4'),
+                get_field_object('color_5')
+              );
 
-              if ($fields) : ?>
-                <?php foreach($fields as $field) : ?>
-                  <?php if ($field['value']) : ?>
-                    <div style="background-color:<?= $field['value']; ?>"></div>
+              if ($colors) : ?>
+                <?php foreach($colors as $color) : ?>
+                  <?php if ($color['value']) : ?>
+                    <div style="background-color:<?= $color['value']; ?>"></div>
                   <?php endif; ?>
                 <?php endforeach; ?>
               <?php endif; ?>
           </div>
 
-          <p class="product__infos__price">12,99 €</p>
+          <p class="product__infos__price"><?php $price = get_field_object('price'); echo $price['value']; ?></p>
         </div>
       </article>
