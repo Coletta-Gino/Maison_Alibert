@@ -90,13 +90,15 @@
           wp_list_comments( array(
             'style'       => 'ol',
             'short_ping'  => true,
-            'avatar_size' => 74,
+            // 'avatar_size' => 74,
           ) );
         ?>
       </ol>
         
       <!-- S'il n'y a pas de commentaires -->
       <?php else : ?>
+        <h2>Avis</h2>
+
         <p class="comments__none">Il n'y a pas de commentaires pour le moment. Soyez le premier à participer !</p>
     <?php endif; ?>
  
