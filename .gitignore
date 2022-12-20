@@ -2,6 +2,7 @@
 /wp
 /wp-config.php
 /content/plugins/*
+!/content/plugins/ExtendComment
 /content/themes/*
 !/content/themes/maisonalibert
 /content/languages

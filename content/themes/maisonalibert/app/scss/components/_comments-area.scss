@@ -11,9 +11,6 @@
           order: 1;
 
           .commentratingbox {
-            // display: flex;
-            // flex-direction: row-reverse;
-
             input {
               display: none;
             }
@@ -32,10 +29,10 @@
               color: #fd4;
             }
   
-            input#rating-5:checked ~ label {
-              color: #fe7;
-              text-shadow: 0 0 20px #952;
-            }
+            // input#rating-5:checked ~ label {
+            //   color: #fe7;
+            //   text-shadow: 0 0 20px #952;
+            // }
           }
         }
 
@@ -62,6 +59,12 @@
     list-style: none;
 
     .comment {
+      .comment-rating {
+        i {
+          color: #fd4;
+        }
+      }
+
       .children {
         list-style: none;
         margin-left: 50px;
