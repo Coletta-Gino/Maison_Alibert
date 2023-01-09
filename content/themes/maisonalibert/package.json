@@ -31,6 +31,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "ajax": "^0.0.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "sass": "^1.55.0"
