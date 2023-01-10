@@ -1,7 +1,7 @@
   <section id="comments" class="comments-area">
     <h2>Avis</h2>
     
-    <?php if ( have_comments() ) : ?>
+    <?php if ( get_comments_number($post->ID) > 0 ) : ?>
       <!-- Global Reviews & Rating Div -->
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <!-- Total Reviews + Average -->
@@ -16,7 +16,7 @@
             $one_star_review = 0;
             $total_user_rating = 0;
 
-            $query = "SELECT wp_comments.comment_author, wp_comments.comment_date, wp_comments.comment_content, wp_commentmeta.meta_key, wp_commentmeta.meta_value FROM wp_comments INNER JOIN wp_commentmeta ON wp_comments.comment_ID=wp_commentmeta.comment_ID WHERE wp_commentmeta.meta_key = 'rating' AND wp_commentmeta.meta_value > 0";
+            $query = "SELECT wp_comments.comment_author, wp_comments.comment_date, wp_comments.comment_content, wp_commentmeta.meta_key, wp_commentmeta.meta_value FROM wp_comments INNER JOIN wp_commentmeta ON wp_comments.comment_ID=wp_commentmeta.comment_ID WHERE wp_commentmeta.meta_key = 'rating' AND wp_commentmeta.meta_value > 0 AND wp_comments.comment_post_ID = $post->ID";
 
             global $wpdb;
             $results = $wpdb->get_results($query, OBJECT_K);
