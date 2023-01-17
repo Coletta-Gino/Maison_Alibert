@@ -51,22 +51,45 @@
             $average_rating = $total_user_rating / $total_review;
           ?>
 
-          <!-- The oldest comment is in the first index -->
-          <!-- <pre>
-            <?php print_r($results); ?>
-          </pre> -->
-
           <h2>
-            <span id="average_rating"><?= $average_rating; ?></span> / 5
+            <span id="average_rating">
+              <?php
+                // To display the final version of the average rating value
+                // Explode the number to get its integer and floating part
+                $final_rating = explode(".", number_format($average_rating, 1));
+
+                // $final_rating[0] => integer part
+                // $final_rating[1] => float part
+                // If the floating part is equal to 0, don't display it
+                if ($final_rating[1] == 0) {
+                  $final_rating = number_format($average_rating, 0);
+
+                  echo $final_rating;
+                }
+                else {
+                  echo $final_rating[0] . ',' . $final_rating[1];
+                }
+              ?>
+            </span> / 5
           </h2>
 
           <div class="stars">
-            <i class="fa fa-star main_star" aria-hidden="true"></i>
-            <i class="fa fa-star main_star" aria-hidden="true"></i>
-            <i class="fa fa-star main_star" aria-hidden="true"></i>
-            <i class="fa fa-star main_star" aria-hidden="true"></i>
-            <i class="fa fa-star main_star" aria-hidden="true"></i>
-            <!-- <i class="fa fa-star-half" aria-hidden="true"></i> -->
+            <?php
+              $star_full = '<i class="fa fa-star" aria-hidden="true"></i>';
+              $star_half = '<i class="fa fa-star-half" aria-hidden="true"></i>';
+
+              // To display the number of stars based on the integer part of the average rating value
+              for ($stars_nb = 1; $stars_nb <= $final_rating[0]; $stars_nb++) {
+                echo $star_full;
+              }
+
+              // If the average rating value contains a floating part, add half a star
+              if (!empty($final_rating[1])) {
+                if ($final_rating[1] >= 2 && $final_rating[1] <= 8) {
+                  echo $star_half;
+                }
+              }
+            ?>
           </div>
 
           <h3>
@@ -178,7 +201,7 @@
           wp_list_comments( array(
             'style'       => 'ul',
             'short_ping'  => true,
-            'avatar_size' => 74,
+            // 'avatar_size' => 74,
           ) );
         ?>
       </ul>

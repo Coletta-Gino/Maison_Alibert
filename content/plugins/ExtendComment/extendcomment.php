@@ -142,3 +142,13 @@ function modify_comment( $text ){
 }
 
 add_filter( 'comment_text', 'modify_comment');
+
+// Add the reply form directly on the desired comment
+function enqueue_comment_reply_script () {
+  if ( get_option( 'thread_comments' ) ) {
+    // Load comment-reply.js
+    wp_enqueue_script( 'comment-reply', '/wp-includes/js/comment-reply.min.js', array(), false, true );
+  }
+}
+
+add_action( 'comment_form_before', 'enqueue_comment_reply_script' );
