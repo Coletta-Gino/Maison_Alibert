@@ -59,6 +59,14 @@
     list-style: none;
 
     .comment {
+      .comment-respond {
+        .comment-form {
+          .comment-form-rating {
+            display: none;
+          }
+        }
+      }
+
       .comment-rating {
         i {
           color: #fd4;
