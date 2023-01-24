@@ -13,6 +13,7 @@
       $args = [
         'post_type' => 'post',
         'category_name' => 'products',
+        'orderby' => $price_desc_results,
       ];
           
       $wpqueryArticles = new WP_Query($args);
