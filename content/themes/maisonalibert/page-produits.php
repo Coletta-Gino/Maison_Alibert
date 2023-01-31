@@ -3,7 +3,7 @@
     <h1><?php the_title(); ?></h1>
   <?php endwhile; endif; ?>
 
-  <?php get_template_part('template-parts/products/sort'); ?>
+  <?php require_once('content/themes/maisonalibert/template-parts/products/sort.php'); ?>
 
   <!-- <button class="sorting">sort</button> -->
   <button class="filtering">filters</button>
@@ -13,7 +13,7 @@
       $args = [
         'post_type' => 'post',
         'category_name' => 'products',
-        'orderby' => $price_desc_results,
+        // 'orderby' => 'rand',
       ];
           
       $wpqueryArticles = new WP_Query($args);
