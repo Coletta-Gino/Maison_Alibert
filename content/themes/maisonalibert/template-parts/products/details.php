@@ -52,5 +52,5 @@
 
     <p class="description"><?php $desc = get_field_object('description'); echo $desc['value']; ?></p>
 
-    <p class="price"><?php $price = get_field_object('price'); echo $price['value']; ?></p>
+    <p class="price"><?php $price = get_field_object('price'); echo $price['value']; ?>&#8239;€</p>
   </section>
