@@ -27,14 +27,48 @@
           'hide_empty' => false
         ];
 
-        $categories = get_categories($args);
+        $parent_categories = get_categories($args);
 
-        // print_r($categories); 
+        // print_r($parent_categories); 
 
-        foreach ($categories as $category) {
-          $category = $category->name;
+        foreach ($parent_categories as $parent_category) {
+          $parent_name = $parent_category->name;
+          $parent_id = $parent_category->cat_ID;
 
-          echo '<button>' . $category . '</button>';
+          // print_r($parent_name);
+          // print_r($parent_id);
+
+          echo '<div>
+                  <span>
+                    <div>
+                      <div><p>' . $parent_name . '&nbsp;</p><div class="count"></div></div>
+                      <div id="dropdown"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                    </div>
+                  </span>
+                </div>';
+
+          // echo '<div class="item">
+          //         <label for="green">Green</label>
+          //         <input id="green" type="checkbox" value="Green">
+          //       </div>';
+
+          // echo '<button>' . $parent_category . '</button>';
+
+          // TODO => be careful to change the value of 'parent' = the id of the children categories !!!
+          $args = [
+            'taxonomy' => 'category',
+            'parent' => $parent_id,
+            'hide_empty' => false
+          ];
+
+          $child_categories = get_categories($args);
+
+          foreach ($child_categories as $child_category) {
+            echo '<div class="collapsible is-closed">
+                    <label for="' . $child_category->name . '">' . $child_category->name . '</label>
+                    <input id="' . $child_category->name . '" type="checkbox" value="' . $child_category->name . '">
+                  </div>';
+          }
         }
       ?>
     </div>

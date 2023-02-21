@@ -86,6 +86,8 @@ var app = {
     }
 
     eventInfinite();
+
+    /////////////// Filter Options Dropdwon ///////////////
   }
 };
 
