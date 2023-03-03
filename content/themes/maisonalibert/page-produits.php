@@ -6,14 +6,14 @@
   <div class="options">
     <!-- Sorting System -->
     <div class="sort">
-      <a href="<?php get_permalink($post->name); ?>?sort=date_asc">les plus anciens</a>
-      <a href="<?php get_permalink($post->name); ?>?sort=price_asc">prix croissant</a>
-      <a href="<?php get_permalink($post->name); ?>?sort=price_desc">prix décroissant</a>
-      <!-- <a href="<?php get_permalink($post->name); ?>?sort=rate_desc">note croissant</a> -->
+      <a href="<?php get_permalink(); ?>?sort=date_asc">les plus anciens</a>
+      <a href="<?php get_permalink(); ?>?sort=price_asc">prix croissant</a>
+      <a href="<?php get_permalink(); ?>?sort=price_desc">prix décroissant</a>
+      <!-- <a href="<?php get_permalink(); ?>?sort=rate_desc">note croissant</a> -->
 
       <!-- If a sort has been applied, display a cancel button -->
       <?php if (isset($_GET['sort'])) : ?>
-        <a href="<?php the_permalink($post->name); ?>">annuler le tri</a>
+        <a href="<?php the_permalink(); ?>">annuler le tri</a>
       <?php endif; ?>
     </div>
 
@@ -29,14 +29,9 @@
 
         $parent_categories = get_categories($args);
 
-        // print_r($parent_categories); 
-
         foreach ($parent_categories as $parent_category) {
           $parent_name = $parent_category->name;
           $parent_id = $parent_category->cat_ID;
-
-          // print_r($parent_name);
-          // print_r($parent_id);
 
           echo '<div>
                   <span>
@@ -46,13 +41,6 @@
                     </div>
                   </span>
                 </div>';
-
-          // echo '<div class="item">
-          //         <label for="green">Green</label>
-          //         <input id="green" type="checkbox" value="Green">
-          //       </div>';
-
-          // echo '<button>' . $parent_category . '</button>';
 
           // TODO => be careful to change the value of 'parent' = the id of the children categories !!!
           $args = [
@@ -76,17 +64,18 @@
 
   <div class="container">
     <?php  
-      // Sort by date and price
-      function custom_query_sort( $order, $sort_by, $meta_key, $meta_value ) {
+      // Display the posts and sort them by date and price
+      function custom_query_sort( $posts_per_page, $order, $sort_by, $meta_key, $meta_value, $offset, $current_page ) {
         $args = array(
           'post_type' => 'post',
           'category_name' => 'products',
-          'posts_per_page' => 12,
+          'posts_per_page' => $posts_per_page,
           'order' => $order,
           'orderby' => $sort_by,
           'meta_key' => $meta_key,
           'meta_value' => $meta_value,
-          // 'meta_value_num' => $meta_value_num,
+          'offset' => $offset,
+          'paged' => $current_page,
         );
       
         $query = new WP_Query( $args );
@@ -101,10 +90,26 @@
         wp_reset_postdata();
       }
 
+      // Retrieve the total number of posts
+      $total_posts = wp_count_posts()->publish;
+
+      // Set the number of posts per page
+      $posts_per_page = 12;
+
+      // Calculate the number of pages
+      $total_pages = ceil($total_posts / $posts_per_page);
+
+      // Initialize variables
       $order = '';
       $sort = '';
       $meta_key = '';
       $value = '';
+
+      // Retrieve the current page number
+      $current_page = get_query_var('paged') ? get_query_var('paged') : 1;
+
+      // Set the offset
+      $offset = ($current_page - 1) * $posts_per_page; 
 
       if ( isset( $_GET['sort'] ) ) {
         $sort = sanitize_text_field( $_GET['sort'] );
@@ -139,7 +144,22 @@
         }
       }
 
-      custom_query_sort( $order, $sort, $meta_key, $value );
+      custom_query_sort( $posts_per_page, $order, $sort, $meta_key, $value, $offset, $current_page );
+
+      // Display the pagination links
+      $pagination = paginate_links(array(
+        'base' => get_pagenum_link(1) . '%_%',
+        'format' => '/page/%#%',
+        'current' => $current_page,
+        'total' => $total_pages,
+        'prev_text' => '&laquo;',
+        'next_text' => '&raquo;',
+        'type' => 'list'
+      ));
+    
+      if ($pagination) {
+        echo '<div class="pagination">' . $pagination . '</div>';
+      }
     ?>
   </div>    
 <?php get_footer(); ?>
