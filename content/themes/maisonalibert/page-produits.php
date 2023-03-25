@@ -3,62 +3,76 @@
     <h1><?php the_title(); ?></h1>
   <?php endwhile; endif; ?>
 
-  <div class="options">
-    <!-- Sorting System -->
-    <div class="sort">
-      <a href="<?php get_permalink(); ?>?sort=date_asc">les plus anciens</a>
-      <a href="<?php get_permalink(); ?>?sort=price_asc">prix croissant</a>
-      <a href="<?php get_permalink(); ?>?sort=price_desc">prix décroissant</a>
-      <!-- <a href="<?php get_permalink(); ?>?sort=rate_desc">note croissant</a> -->
 
-      <!-- If a sort has been applied, display a cancel button -->
-      <?php if (isset($_GET['sort'])) : ?>
-        <a href="<?php the_permalink(); ?>">annuler le tri</a>
+  
+
+  <div class="options">
+    <div class="sort">
+      <a href="<?= add_query_arg( 'sort', 'date_asc' ); ?>">les plus anciens</a>
+      <a href="<?= add_query_arg( 'sort', 'price_asc' ); ?>">prix croissant</a>
+      <a href="<?= add_query_arg( 'sort', 'price_desc' ); ?>">prix décroissant</a>
+
+      <?php if ( isset( $_GET['sort'] ) ) : ?>
+        <a href="<?= remove_query_arg( 'sort' ); ?>">annuler le tri</a>
       <?php endif; ?>
     </div>
 
     <!-- Filter System -->
     <div class="filter">
-      <?php
-        // TODO => be careful to change the value of 'parent' = the id of the products category !!!
-        $args = [
-          'taxonomy' => 'category',
-          'parent' => 10,
-          'hide_empty' => false
-        ];
-
-        $parent_categories = get_categories($args);
-
-        foreach ($parent_categories as $parent_category) {
-          $parent_name = $parent_category->name;
-          $parent_id = $parent_category->cat_ID;
-
-          echo '<div>
-                  <span>
-                    <div>
-                      <div><p>' . $parent_name . '&nbsp;</p><div class="count"></div></div>
-                      <div id="dropdown"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                    </div>
-                  </span>
-                </div>';
-
-          // TODO => be careful to change the value of 'parent' = the id of the children categories !!!
+      <div class="filter__choices">
+        <!-- data-att="< $category = get_the_category(); echo esc_attr($category[0]->slug); ?>" -->
+        <?php
+          // TODO => be careful to change the value of 'parent' = the id of the products category !!!
           $args = [
             'taxonomy' => 'category',
-            'parent' => $parent_id,
+            'parent' => 10,
             'hide_empty' => false
           ];
 
-          $child_categories = get_categories($args);
+          $parent_categories = get_categories($args);
 
-          foreach ($child_categories as $child_category) {
-            echo '<div class="collapsible is-closed">
-                    <label for="' . $child_category->name . '">' . $child_category->name . '</label>
-                    <input id="' . $child_category->name . '" type="checkbox" value="' . $child_category->name . '">
-                  </div>';
+          foreach ($parent_categories as $parent_category) {
+            $parent_name = $parent_category->name;
+            $parent_id = $parent_category->cat_ID;
+
+            echo '<div class="category">
+                    <span>
+                      <div>
+                        <div>
+                          <p>' . $parent_name . '&nbsp;</p>
+                          <div class="count"></div>
+                        </div>
+
+                        <div id="btn" class="btn">
+                          <i class="fa fa-chevron-down" id="arrow" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </span>';
+
+            // TODO => be careful to change the value of 'parent' = the id of the children categories !!!
+            $args = [
+              'taxonomy' => 'category',
+              'parent' => $parent_id,
+              'hide_empty' => false
+            ];
+
+            $child_categories = get_categories($args);
+
+            echo '<div class="subcategories">';
+
+            foreach ($child_categories as $child_category) {
+              echo '<div class="dropdown" id="dropdown">
+                      <div>
+                        <label for="' . $child_category->name . '">' . $child_category->name . '</label>
+                        <input id="' . $child_category->name . '" type="checkbox" value="' . $child_category->name . '">
+                      </div>
+                    </div>';
+            }
+
+            echo '</div></div>';
           }
-        }
-      ?>
+        ?>
+      </div>
     </div>
   </div>
 
@@ -148,8 +162,9 @@
 
       // Display the pagination links
       $pagination = paginate_links(array(
-        'base' => get_pagenum_link(1) . '%_%',
-        'format' => '/page/%#%',
+        'base' => home_url( '/produits/page/%#%/' ),
+        'format' => '?sort=' . $sort . '&page=%#%',
+        // 'format' => '?page=%#%&sort=' . $sort,
         'current' => $current_page,
         'total' => $total_pages,
         'prev_text' => '&laquo;',

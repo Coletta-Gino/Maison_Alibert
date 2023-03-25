@@ -1,0 +1,75 @@
+//////////////// Filtering ////////////////
+.options {
+  .filter {
+    &__choices {
+    //   display: flex;
+    //   justify-content: space-around;
+    //   align-items: center;
+
+      .category {
+        span {
+          div {
+            display: flex;
+            // justify-content: space-evenly;
+            align-items: center;
+    
+            .btn {
+              .fa-chevron-down {
+                transition: 0.2s ease;
+          
+                &.is-up {
+                  transform: rotate(-180deg);
+                  transition: 0.2s ease;
+                }
+              }
+            }
+          }
+        }
+
+        .subcategories {
+        //   display: none;
+
+        //   &.show {
+        //     display: block;
+        //   }
+
+          .dropdown {
+            height: 0px;
+            padding: 0 0 20px;
+            margin-top: 5px;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            transition: all 150ms linear 0s;
+        
+            &.is-open {
+              height: auto;
+              opacity: 1;
+              visibility: visible;
+              overflow: hidden;
+              transition: all 150ms linear 0s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    
+// Tablet
+// @media screen and (min-width: $breakpoint-small) {
+//   .options {
+//     .filter {
+      
+//     }
+//   }
+// }
+    
+// Desktop
+// @media screen and (min-width: $breakpoint-medium) {
+//   .options {
+//     .filter {
+      
+//     }
+//   }
+// }
