@@ -1,4 +1,15 @@
-      <article class="product" id="product-<?php the_ID(); ?>">
+      <?php
+        $categories = get_the_category();
+        foreach ($categories as $category) {
+          if ( $category->category_parent > 0 ) {
+            // This is a child category
+            $child_category = get_term( $category, 'category' );
+            $slug = $child_category->slug;
+          }
+        }
+      ?>
+      
+      <article class="product" id="product-<?php the_ID(); ?>" data-category="<?= $slug; ?>">
         <div class="product__image">
           <?php the_post_thumbnail(); ?>
         </div>

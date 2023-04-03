@@ -87,49 +87,17 @@ var app = {
 
     eventInfinite();
 
-    /////////////// Filter Options Dropdwon ///////////////
-    // Attach a click event listener to all chevron-down icons
-    document.querySelectorAll('.fa-chevron-down').forEach(function(chevron) {
-      chevron.addEventListener('click', function() {
-        // Get all dropdown menus
-        var dropdownMenus = document.querySelectorAll('.dropdown');
-        // Toggle the display of each dropdown menu one by one
-        dropdownMenus.forEach(function(dropdownMenu, index) {
-          setTimeout(function() {
-            dropdownMenu.classList.toggle('is-open');
-          }, index * 100);
-        });
-        // Toggle the state of all chevron-down icons
-        document.querySelectorAll('.fa-chevron-down').forEach(function(chevron) {
-          chevron.classList.toggle('is-up');
-        });
+    /////////////// Selected Category ///////////////
+    const categoryButtons = document.querySelectorAll('.filter button');
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const category = button.dataset.category;
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('category', category);
+        window.location.href = currentUrl.href;
       });
     });
-
-    /////////////// Selected Filters ///////////////
-    // var btn = document.querySelectorAll('.categories button');
-    // var product = document.querySelectorAll('.product');
-
-    // btn.forEach(item => {
-    //   item.addEventListener('click', () => {
-    //     for (let i = 0; i < btn.length; i++) {
-    //       btn[i].classList.remove('selected');
-    //     }
-
-    //     item.classList.add('selected');
-
-    //     // Show Product
-    //     product.forEach(show => {
-    //       show.style.display = 'none';
-
-    //       let products = item.textContent.toLowerCase();
-
-    //       if (show.getAttribute('data-att') === products || products === 'tous') {
-    //         show.style.display = '';
-    //       }
-    //     });
-    //   });
-    // });
   }
 };
 
