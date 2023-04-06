@@ -1,0 +1,44 @@
+//////////////// PAGINATION ////////////////
+main {
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .page-numbers {
+      display: flex;
+
+      li {
+        text-decoration: none;
+        list-style: none;
+        margin: 0 0.25em 0.5em;
+      }
+    }
+  }
+}
+      
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .pagination {
+      .page-numbers {
+        li {
+          margin: 0 0.5em 0.75em;
+        }
+      }
+    }
+  }
+}
+    
+// Desktop
+// @media screen and (min-width: $breakpoint-medium) {
+//   main {
+//     .pagination {
+//       .page-numbers {
+//         li {
+//           margin: 0 0.75em 1em;
+//         }
+//       }
+//     }
+//   }
+// }

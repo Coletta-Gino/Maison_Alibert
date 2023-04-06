@@ -7,6 +7,10 @@
   
 body {
   overflow-x: hidden;
+  font-family: 'Balgor Regular', serif;
+  // font-family: 'Bodoni 72 Smallcaps Book', serif;
+  // font-family: 'Bodoni 72 Book', sans-serif;
+  // font-family: 'bodoni-72-book', serif;
 }
 
 h1,
@@ -17,7 +21,7 @@ h2 {
   align-items: center;
   color: $ruddy-pink;
   text-shadow: 3px 3px 2px rgba(240, 234, 226, 0.5);
-  font-family: "Balgor Regular";
+  // font-family: "Balgor Regular";
 
   // &::before {
   //   content: '';

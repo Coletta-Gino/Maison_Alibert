@@ -4,10 +4,20 @@
       <a href="<?php echo home_url(); ?>">
         <?php 
           // TODO => be careful to change the value of $attachment_id = the id of the logo's picture !!!
-          $image_attributes = wp_get_attachment_image_src(37, 'full');
-          $alt_text = get_post_meta(37, '_wp_attachment_image_alt', true);
+          $attachment_id = 37; // Default attachment ID
+          $alt_text = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+
+          $nav_classes = get_body_class();
+
+          if (in_array('sticky', $nav_classes)) {
+            // If the nav element has the 'sticky' class, use a different attachment ID and alt text
+            $attachment_id = 37; // ID of the new logo's picture
+            $alt_text = get_post_meta($attachment_id, '_wp_attachment_image_alt', true); // New alt text for the sticky logo
+          }
+    
+          $image_attributes = wp_get_attachment_image_src($attachment_id, 'full');
         ?>
-  
+      
         <img src="<?php echo $image_attributes[0]; ?>" alt="<?php echo $alt_text; ?>" />
       </a>
     </div>

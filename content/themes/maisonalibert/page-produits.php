@@ -4,17 +4,6 @@
   <?php endwhile; endif; ?>
 
   <div class="options">
-    <!-- Sort System -->
-    <div class="sort">
-      <a href="<?= add_query_arg( 'sort', 'date_asc' ); ?>">les plus anciens</a>
-      <a href="<?= add_query_arg( 'sort', 'price_asc' ); ?>">prix croissant</a>
-      <a href="<?= add_query_arg( 'sort', 'price_desc' ); ?>">prix décroissant</a>
-
-      <?php if ( isset( $_GET['sort'] ) ) : ?>
-        <a href="<?= remove_query_arg( 'sort' ); ?>">annuler le tri</a>
-      <?php endif; ?>
-    </div>
-
     <!-- Filter System -->
     <div class="filter">
       <button class="selected" data-category="all">Tous</button>
@@ -36,6 +25,17 @@
           echo '<button class="' . $active_class . '" data-category="' . $category_slug . '">' . $category_name . '</button>';
         }
       ?>
+    </div>
+
+    <!-- Sort System -->
+    <div class="sort">
+      <a href="<?= add_query_arg( 'sort', 'date_asc' ); ?>">les plus anciens</a>
+      <a href="<?= add_query_arg( 'sort', 'price_asc' ); ?>">prix croissant</a>
+      <a href="<?= add_query_arg( 'sort', 'price_desc' ); ?>">prix décroissant</a>
+
+      <?php if ( isset( $_GET['sort'] ) ) : ?>
+        <a href="<?= remove_query_arg( 'sort' ); ?>">annuler le tri</a>
+      <?php endif; ?>
     </div>
   </div>
 
@@ -134,22 +134,24 @@
         }
       }
 
-      custom_query_sort( $posts_per_page, $order, $sort, $meta_key, $value, $offset, $current_page, $category );
-
-      // Display the pagination links
-      $pagination = paginate_links(array(
-        'base' => home_url( '/produits/page/%#%/' ),
-        'format' => '?sort=' . $sort . '&page=%#%&category=' . $category,
-        'current' => $current_page,
-        'total' => $total_pages,
-        'prev_text' => '&laquo;',
-        'next_text' => '&raquo;',
-        'type' => 'list'
-      ));
-    
-      if ($pagination) {
-        echo '<div class="pagination">' . $pagination . '</div>';
-      }
+      custom_query_sort( $posts_per_page, $order, $sort, $meta_key, $value, $offset, $current_page, $category ); 
     ?>
-  </div>    
+  </div>  
+  
+  <?php
+    // Display the pagination links
+    $pagination = paginate_links(array(
+      'base' => home_url( '/produits/page/%#%/' ),
+      'format' => '?sort=' . $sort . '&page=%#%&category=' . $category,
+      'current' => $current_page,
+      'total' => $total_pages,
+      'prev_text' => '&laquo;',
+      'next_text' => '&raquo;',
+      'type' => 'list'
+    ));
+  
+    if ($pagination) {
+      echo '<div class="pagination">' . $pagination . '</div>';
+    }
+  ?>
 <?php get_footer(); ?>

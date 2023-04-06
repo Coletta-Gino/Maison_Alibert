@@ -1,24 +1,70 @@
 //////////////// Filtering ////////////////
-.options {
-  .filter {
-    margin: 2em;
+main {
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5em 0 1.25em;
+
+    .filter {
+      button {
+        color: $nickel;
+        background-color: $alabaster;
+        box-shadow: inset -10px -10px 20px #c0bbb5,
+                    inset 10px 10px 20px #ffffff,
+                    2px 2px 4px #ccc7c0,
+                    -2px -2px 4px #ffffff;
+        text-transform: capitalize;
+        padding: 10px 20px;
+        margin: 0 0.5em 1em;
+        border-radius: 15px;
+        // border: solid 1px red;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          color: $alabaster;
+          background-color: $nickel;
+          box-shadow: inset 10px 10px 20px #5c5c5c,
+                      inset -10px -10px 20px #8a8a8a,
+                      -2px -2px 4px #5c5c5c,
+                      2px 2px 4px #8a8a8a;
+          transition: 0.5s;
+        }
+      }
+    }
   }
 }
     
 // Tablet
-// @media screen and (min-width: $breakpoint-small) {
-//   .options {
-//     .filter {
-      
-//     }
-//   }
-// }
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .options {
+      margin: 3.5em 0 1.75em;
+  
+      .filter {
+        button {
+          padding: 12.5px 25px;
+        }
+      }
+    }
+  }
+}
     
 // Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   .options {
-//     .filter {
-      
-//     }
-//   }
-// }
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .options {
+      margin: 4.5em 0 2.75em;
+  
+      .filter {
+        button {
+          padding: 15px 30px;
+        }
+      }
+    }
+  }
+}

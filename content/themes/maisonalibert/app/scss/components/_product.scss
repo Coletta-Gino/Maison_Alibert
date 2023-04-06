@@ -2,25 +2,30 @@
 main {
   .container {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    /* grid-auto-flow: column dense; */
+    grid-template-columns: repeat(2, [col] 40%);
+    /* grid-template-rows: repeat(6, [row] 150px); */
+    justify-content: space-evenly;
 
     .product {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
       color: $nickel;
       background-color: $alabaster;
       box-shadow: inset -10px -10px 20px #c0bbb5,
                   inset 10px 10px 20px #ffffff,
                   2px 2px 4px #ccc7c0,
                   -2px -2px 4px #ffffff;
-      padding: 1em 1em 0;
-      margin-top: 1em;
+      padding: 1em;
+      margin-bottom: 1.5em;
       border-radius: 25px;
 
       &__image {
-        width: 125px;
-        height: 125px;
+        width: 100%;
+        height: 22.5vh;
         border: solid 1px $blue-sapphire;
         border-radius: 15px;
         overflow: hidden;
@@ -37,19 +42,21 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 1em;
 
-        h3 {
-          margin: 1em 0;
+        &__rating {
+          margin: 0.5em 0 0.25em;
+        }
+
+        &__name {
+          margin: 0.25em 0;
         }
 
         &__colors {
-          width: 125px;
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
           align-items: center;
-          margin: 0 auto;
+          margin: 0.25em auto;
 
           div {
             width: 20px;
@@ -58,6 +65,10 @@ main {
             // border: solid 1px $blue-sapphire;
             border-radius: 7px;
           }
+        }
+
+        &__price {
+          margin: 0.25em 0 0;
         }
       }
     }
@@ -68,28 +79,39 @@ main {
 @media screen and (min-width: $breakpoint-small) {
   main {
     .container {
+      /* grid-auto-flow: column dense; */
+      grid-template-columns: repeat(3, [col] 27%);
+      /* grid-template-rows: repeat(4, [row] 150px); */
+
       .product {
-        padding: 1.5em 1.5em 0;
-        margin-top: 1.5em;
+        padding: 1.5em;
+        margin-bottom: 2em;
   
         &__image {
-          width: 175px;
-          height: 175px;
+          height: 30vh;
         }
   
         &__infos {
-          h3 {
-            margin: 1.5em 0;
+          &__rating {
+            margin: 0.75em 0 0.5em;
+          }
+  
+          &__name {
+            margin: 0.5em 0;
           }
   
           &__colors {
-            width: 175px;
+            margin: 0.5em auto;
   
             div {
               width: 25px;
               height: 25px;
               margin: 0 3.5px 7px 3.5px;
             }
+          }
+
+          &__price {
+            margin: 0.5em 0 0;
           }
         }
       }
@@ -101,28 +123,39 @@ main {
 @media screen and (min-width: $breakpoint-medium) {
   main {
     .container {
+      /* grid-auto-flow: column dense; */
+      grid-template-columns: repeat(4, [col] 20%);
+      /* grid-template-rows: repeat(3, [row] 150px); */
+
       .product {
-        padding: 2em 2em 0;
-        margin-top: 2em;
+        padding: 2em;
+        margin-bottom: 5em;
   
         &__image {
-          width: 225px;
-          height: 225px;
+          height: 30vh;
         }
-  
+
         &__infos {
-          h3 {
-            margin: 2em 0;
+          &__rating {
+            margin: 1em 0 0.75em;
+          }
+  
+          &__name {
+            margin: 0.75em 0;
           }
   
           &__colors {
-            width: 225px;
+            margin: 0.75em auto;
   
             div {
               width: 30px;
               height: 30px;
               margin: 0 4.5px 9px 4.5px;
             }
+          }
+
+          &__price {
+            margin: 0.75em 0 0;
           }
         }
       }

@@ -24,7 +24,8 @@
         "wpackagist-plugin/advanced-custom-fields": "*",
         "wpackagist-plugin/advanced-custom-fields-font-awesome": "*",
         "wpackagist-plugin/wordpress-seo": "*",
-        "wpackagist-plugin/wp-carousel-free": "*"
+        "wpackagist-plugin/wp-carousel-free": "*",
+        "wpackagist-plugin/use-any-font": "^6.3"
     },
     "extra" : {
         "wordpress-install-dir": "wp",

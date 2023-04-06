@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98f1ffa2e1edfd391b6513500be4202d",
+    "content-hash": "d0a1286c12753bdab297da3126019209",
     "packages": [
         {
             "name": "composer/installers",
@@ -352,6 +352,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
+        },
+        {
+            "name": "wpackagist-plugin/use-any-font",
+            "version": "6.3.01",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/use-any-font/",
+                "reference": "tags/6.3.01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/use-any-font.6.3.01.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/use-any-font/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
