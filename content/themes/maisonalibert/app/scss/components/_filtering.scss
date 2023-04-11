@@ -9,7 +9,7 @@ main {
 
     .filter {
       button {
-        color: $nickel;
+        color: $chinese-black;
         background-color: $alabaster;
         box-shadow: inset -10px -10px 20px #c0bbb5,
                     inset 10px 10px 20px #ffffff,
@@ -19,20 +19,19 @@ main {
         padding: 10px 20px;
         margin: 0 0.5em 1em;
         border-radius: 15px;
-        // border: solid 1px red;
         border: none;
         outline: none;
         cursor: pointer;
         transition: 0.5s;
+        will-change: box-shadow, transform;
 
         &:hover {
-          color: $alabaster;
-          background-color: $nickel;
-          box-shadow: inset 10px 10px 20px #5c5c5c,
-                      inset -10px -10px 20px #8a8a8a,
-                      -2px -2px 4px #5c5c5c,
-                      2px 2px 4px #8a8a8a;
+          box-shadow: inset 10px 10px 20px #c0bbb5,
+                      inset -10px -10px 20px #ffffff,
+                      -2px -2px 4px #ccc7c0,
+                      2px 2px 4px #ffffff;
           transition: 0.5s;
+          transform: translateY(-2px) rotateX(5deg);
         }
       }
     }
