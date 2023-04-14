@@ -3,9 +3,9 @@
     
     <?php if ( get_comments_number($post->ID) > 0 ) : ?>
       <!-- Global Reviews & Rating Div -->
-      <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="comments-area__summary">
         <!-- Total Reviews + Average -->
-        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="total-reviews-average">
           <?php
             $average_rating = 0;
             $total_review = 0;
@@ -70,7 +70,7 @@
                   echo $final_rating[0] . ',' . $final_rating[1];
                 }
               ?>
-            </span> / 5
+            </span>&#8239;/ 5
           </h2>
 
           <div class="stars">
@@ -95,21 +95,23 @@
           <h3>
             <?php
               if (get_comments_number() > 1) {
-                echo '<span id="total_review">' . get_comments_number() . '</span>' . ' commentaires';
+                echo '<span id="total_review">' . get_comments_number() . ' commentaires</span>';
               }
               else {
-                echo '<span id="total_review">' . get_comments_number() . '</span>' . ' commentaire';
+                echo '<span id="total_review">' . get_comments_number() . ' commentaire</span>';
               }
             ?>
           </h3>
         </div>
 
         <!-- Reviews Details -->
-        <div>
+        <div class="reviews-details">
           <!-- 5 -->
-          <div style="display: flex;">
+          <div class="reviews-details__5">
             <!-- Value -->
-            <div class="column"><b>5 </b><i class="fa fa-star" aria-hidden="true"></i></div>
+            <div class="column">
+              <b>5</b><i class="fa fa-star" aria-hidden="true"></i>
+            </div>
 
             <!-- Progress Bar -->
             <div class="column">
@@ -123,9 +125,11 @@
           </div>
 
           <!-- 4 -->
-          <div style="display: flex;">
+          <div class="reviews-details__4">
             <!-- Value -->
-            <div class="column"><b>4 </b><i class="fa fa-star" aria-hidden="true"></i></div>
+            <div class="column">
+              <b>4</b><i class="fa fa-star" aria-hidden="true"></i>
+            </div>
 
             <!-- Progress Bar -->
             <div class="column">
@@ -139,9 +143,11 @@
           </div>
 
           <!-- 3 -->
-          <div style="display: flex;">
+          <div class="reviews-details__3">
             <!-- Value -->
-            <div class="column"><b>3 </b><i class="fa fa-star" aria-hidden="true"></i></div>
+            <div class="column">
+              <b>3</b><i class="fa fa-star" aria-hidden="true"></i>
+            </div>
 
             <!-- Progress Bar -->
             <div class="column">
@@ -155,9 +161,11 @@
           </div>
 
           <!-- 2 -->
-          <div style="display: flex;">
+          <div class="reviews-details__2">
             <!-- Value -->
-            <div class="column"><b>2 </b><i class="fa fa-star" aria-hidden="true"></i></div>
+            <div class="column">
+              <b>2</b><i class="fa fa-star" aria-hidden="true"></i>
+            </div>
 
             <!-- Progress Bar -->
             <div class="column">
@@ -171,9 +179,11 @@
           </div>
 
           <!-- 1 -->
-          <div style="display: flex;">
+          <div class="reviews-details__1">
             <!-- Value -->
-            <div class="column"><b>1 </b><i class="fa fa-star" aria-hidden="true"></i></div>
+            <div class="column">
+              <b>1</b><i class="fa fa-star" aria-hidden="true"></i>
+            </div>
 
             <!-- Progress Bar -->
             <div class="column">
@@ -188,14 +198,14 @@
         </div>
 
         <!-- Add Review -->
-        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <h3>Write review here</h3>
+        <div class="add-review">
+          <h3>Donnez votre avis ici</h3>
 
-          <button type="button" name="add_review" class="button is-info js-modal-trigger" id="add_review" data-target="modal-js-example">Add review</button>
+          <a href="#respond">Ajouter un commentaire</a>
         </div>
       </div>
     
-      <ul class="comment__list" style="margin-top: 5em;">
+      <ul class="comment__list">
         <?php
           // La fonction qui liste les commentaires
           wp_list_comments( array(

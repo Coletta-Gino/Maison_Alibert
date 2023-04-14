@@ -98,6 +98,33 @@ var app = {
         window.location.href = currentUrl.href;
       });
     });
+
+    /////////////// Add User's First Character Before His Name ///////////////
+    let fnElements = document.querySelectorAll('.comment-author .fn');
+
+    fnElements.forEach(function(fn) {
+      const newNode = document.createElement('div');
+      newNode.classList.add('first-char');
+      newNode.textContent = fn.textContent.charAt(0);
+    
+      let firstChar = fn.parentNode;
+      firstChar.insertBefore(newNode, fn);
+    });
+
+    /////////////// Replace <a> By <p> In Comments Area ///////////////
+    const commentMetas = document.querySelectorAll('.comment-meta');
+
+    commentMetas.forEach(commentMeta => {
+      const link = commentMeta.querySelector('a');
+
+      const newElement = document.createElement('em');
+
+      // Copy the content of the <a> element to the new <p> element
+      newElement.innerHTML = link.innerHTML;
+
+      // Replace the <a> element with the new <p> element
+      link.parentNode.replaceChild(newElement, link);
+    });
   }
 };
 

@@ -61,7 +61,7 @@ add_filter('comment_form_default_fields', 'custom_fields');
 function additional_fields () {
   // echo '<p class="comment-form-title">' . '<label for="title">' . __( 'Comment Title' ) . '</label>' . '<input id="title" name="title" type="text" size="30" tabindex="5" /></p>';
 
-  echo '<p class="comment-form-rating">' . '<label for="rating">' . __('Rating') . '</label><span class="commentratingbox">';
+  echo '<p class="comment-form-rating">' . '<label for="rating">' . __('Note') . '</label><span class="commentratingbox">';
 
   //Current rating scale is 1 to 5. If you want the scale to be 1 to 10, then set the value of $i to 10.
   for ($i=5; $i >= 1 ; $i--) 
