@@ -77,9 +77,28 @@ main {
             progress[value] {
               // Reset the default appearance
               -webkit-appearance: none;
+              -moz-appearance: none;
               appearance: none;
+
+              // Dimensions
               width: 225px;
               height: 15px;
+
+              // Get rid of default border in Firefox
+              border: none;
+
+              // Base
+              background-color: #eee;
+              border-radius: 15px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+
+              // For IE10
+              color: $ruddy-pink;
+            }
+
+            progress::-moz-progress-bar {
+              background: $ruddy-pink;
+              border-radius: 15px 0 0 15px; 
             }
 
             // Style the container
@@ -150,7 +169,7 @@ main {
               text-transform: uppercase;
               font-size: 2em;
               margin-right: 0.25em;
-              border-radius: 7px;
+              border-radius: 8px;
             }
 
             .fn {
@@ -216,8 +235,8 @@ main {
           flex-wrap: wrap;
 
           // &.comment-notes {
-          //   display: flex;
-          //   flex-wrap: wrap;
+            // display: flex;
+            // flex-wrap: wrap;
           // }
   
           &.comment-form-author {
@@ -341,16 +360,264 @@ main {
   }
 }
 
-// // Tablet
-// @media screen and (min-width: $breakpoint-small) {
-//   section {
-//     padding: 2.5em;
-//   }
-// }
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .comments-area {
+      &__summary {
+        flex-direction: row;
+
+        .total-reviews-average {
+          width: 25%;
+
+          // .stars {
+          //   margin: 1em 0;
+          // }
+        }
+  
+        .reviews-details {
+          width: 45%;
+        }
+  
+        .add-review {
+          width: 25%;
+        }
+      }
+  
+      .comment__list {
+        margin-top: 1.5em;
+  
+        .comment {
+          .comment-body {
+            padding: 1.5em;
+            margin: 0.75em 0 1.75em;
+  
+            .comment-author {
+              margin: 0.5em 0;
+  
+              .first-char {
+                width: 40px;
+                height: 40px;
+                // font-size: 2em;
+                // margin-right: 0.25em;
+                border-radius: 8.5px;
+              }
+            }
+  
+            .comment-meta {
+              margin-bottom: 1em;
+            }
+  
+            .comment-rating {
+              margin: 0.5em 0;
+            }
+  
+            p {
+              margin: 0.5em 0;
+            }
+  
+            .reply {
+              margin-top: 1em;
+            }
+          }
+        }
+      }
+  
+      .comment-respond {
+        .comment-form {
+          p {
+            &.comment-notes {
+              .required-field-message {
+                margin-left: 0.25em;
+              }
+            }
+
+            &.comment-form-author {
+              label {
+                margin-bottom: 0.75em;
+              }
+  
+              input {
+                height: 6.5vh;
+                padding: 1.5em;
+                border-radius: 7.5px;
+              }
+            }
     
-// // Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   section {
-//     padding: 3em;
-//   }
-// }
+            &.comment-form-email {
+              label {
+                margin-bottom: 0.75em;
+              }
+  
+              input {
+                height: 6.5vh;
+                padding: 1.5em;
+                border-radius: 7.5px;
+              }
+            }
+  
+            &.comment-form-rating {
+              label {
+                margin-bottom: 0.75em;
+              }
+    
+              .commentratingbox {
+                label {
+                  font-size: 2.5em;
+                }
+              }
+            }
+    
+            &.comment-form-comment {
+              label {
+                margin-bottom: 0.75em;
+              }
+  
+              textarea {
+                padding: 1.5em;
+                border-radius: 7.5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .comments-area {
+      &__summary {
+        .total-reviews-average {
+          width: 30%;
+
+          // .stars {
+          //   margin: 1em 0;
+          // }
+        }
+  
+        .reviews-details {
+          width: 30%;
+
+          &__5,
+          &__4,
+          &__3,
+          &__2, 
+          &__1 {
+            .column {
+              margin: 0.5em 0;
+
+              progress[value] {
+                width: 300px;
+                height: 20px;
+              }
+            }
+          } 
+        }
+  
+        .add-review {
+          width: 30%;
+        }
+      }
+  
+      .comment__list {
+        // margin-top: 1.5em;
+  
+        .comment {
+          .comment-body {
+            padding: 2em;
+            margin: 1em 0 2em;
+  
+            .comment-author {
+              margin: 0.75em 0;
+  
+              .first-char {
+                width: 45px;
+                height: 45px;
+                // font-size: 2em;
+                // margin-right: 0.25em;
+                border-radius: 9px;
+              }
+            }
+  
+            .comment-meta {
+              margin-bottom: 1.25em;
+            }
+  
+            .comment-rating {
+              margin: 0.75em 0;
+            }
+  
+            p {
+              margin: 0.75em 0;
+            }
+  
+            .reply {
+              margin-top: 1.25em;
+            }
+          }
+        }
+      }
+  
+      .comment-respond {
+        .comment-form {
+          p {
+            &.comment-notes {
+              display: flex;
+              flex-wrap: wrap;
+            }
+    
+            &.comment-form-author {
+              label {
+                margin-bottom: 1em;
+              }
+  
+              input {
+                height: 7vh;
+                padding: 2em;
+                border-radius: 8px;
+              }
+            }
+    
+            &.comment-form-email {
+              label {
+                margin-bottom: 1em;
+              }
+  
+              input {
+                height: 7vh;
+                padding: 2em;
+                border-radius: 8px;
+              }
+            }
+  
+            &.comment-form-rating {
+              label {
+                margin-bottom: 1em;
+              }
+    
+              .commentratingbox {
+                label {
+                  font-size: 3em;
+                }
+              }
+            }
+    
+            &.comment-form-comment {
+              label {
+                margin-bottom: 1em;
+              }
+  
+              textarea {
+                padding: 2em;
+                border-radius: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
