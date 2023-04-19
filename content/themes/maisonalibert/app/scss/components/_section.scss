@@ -25,21 +25,23 @@ section {
   // box-shadow: inset -20px -20px 60px #c0867d,
   //             inset 20px 20px 60px #ffb6a9;
 
-  padding: 1.5em;
+  padding: 1em;
   margin: 1em 0 3em;
   border-radius: 25px;
 }
     
-// // Tablet
-// @media screen and (min-width: $breakpoint-small) {
-//   section {
-//     padding: 2.5em;
-//   }
-// }
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  section {
+    padding: 1.5em;
+  }
+}
     
-// // Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   section {
-//     padding: 3em;
-//   }
-// }
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  section {
+    width: 80%;
+    padding: 2em;
+    margin: 1em auto 3em;
+  }
+}

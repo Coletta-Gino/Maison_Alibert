@@ -1,0 +1,56 @@
+////////// Contact //////////
+footer {
+  .contact {
+    margin: 0.75em 0;
+
+    h4 {
+      text-align: center;
+    }
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      list-style: none;
+      margin: 0.25em 0 0.5em;
+
+      a {
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  footer {
+    .contact {
+      margin: 1em 0;
+  
+      li {
+        margin: 0.5em 0 0.75em;
+  
+        // a {
+        //   margin-left: 0.5em;
+        // }
+      }
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  footer {
+    .contact {
+      margin: 1.25em 0;
+  
+      li {
+        margin: 0.75em 0 1em;
+  
+        // a {
+        //   margin-left: 0.5em;
+        // }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-<div>
+<div class="simplified-logo">
   <?php 
     // TODO => be careful to change the value of $attachment_id = the id of the simplified logo's picture !!!
     $image_attributes = wp_get_attachment_image_src(37, 'full');

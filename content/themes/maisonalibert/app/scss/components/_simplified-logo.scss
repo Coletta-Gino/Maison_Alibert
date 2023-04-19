@@ -1,6 +1,6 @@
 //////////////// SIMPLIFIED LOGO ////////////////
 footer {
-  div {
+  .simplified-logo {
     width: 50px;
     height: auto;
 
@@ -14,7 +14,7 @@ footer {
 // Tablet
 @media screen and (min-width: $breakpoint-small) {
   footer {
-    div {
+    .simplified-logo {
       width: 62.5px;
       height: auto;
     }
@@ -24,7 +24,7 @@ footer {
 // Desktop
 @media screen and (min-width: $breakpoint-medium) {
   footer {
-    div {
+    .simplified-logo {
       width: 75px;
       height: auto;
     }

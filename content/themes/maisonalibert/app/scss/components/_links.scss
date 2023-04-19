@@ -1,0 +1,28 @@
+////////// Links //////////
+footer {
+  .links {
+    margin: 0.75em 0;
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  footer {
+    .links {
+      margin: 1em 0;
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  footer {
+    .links {
+      margin: 1.25em 0;
+    }
+  }
+}

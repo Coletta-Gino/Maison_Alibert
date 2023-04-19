@@ -234,10 +234,10 @@ main {
           display: flex;
           flex-wrap: wrap;
 
-          // &.comment-notes {
-            // display: flex;
-            // flex-wrap: wrap;
-          // }
+          &.comment-notes {
+            color: $nickel;
+            font-style: italic;
+          }
   
           &.comment-form-author {
             order: 1;

@@ -40,9 +40,18 @@ h2 {
   font-size: 2em;
 }
 
+h3 {
+  color: $ruddy-pink;
+  // font-size: 1.5em;
+}
+
 p {
   color: $chinese-black;
   margin: 1em 0;
+}
+
+.required {
+  color: $ruddy-pink;
 }
   
 // h1 {

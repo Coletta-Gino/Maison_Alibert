@@ -1,0 +1,46 @@
+////////// Social Media //////////
+footer {
+  .social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0.75em 0;
+
+    h4 {
+      width: 100%;
+      text-align: center;
+    }
+
+    li {
+      margin: 0.25em 0.25em 0;
+      list-style: none;
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  footer {
+    .social-media {
+      margin: 1em 0;
+  
+      li {
+        margin: 0.5em 0.5em 0;
+      }
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  footer {
+    .social-media {
+      margin: 1.25em 0;
+  
+      li {
+        margin: 0.75em 0.75em 0;
+      }
+    }
+  }
+}

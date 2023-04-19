@@ -1,0 +1,30 @@
+////////// Copyright //////////
+footer {
+  .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.75em;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  footer {
+    .copyright {
+      margin-top: 1em;
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  footer {
+    .copyright {
+      margin-top: 1.25em;
+    }
+  }
+}

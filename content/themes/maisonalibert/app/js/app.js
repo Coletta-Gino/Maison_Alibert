@@ -125,6 +125,9 @@ var app = {
       // Replace the <a> element with the new <p> element
       link.parentNode.replaceChild(newElement, link);
     });
+
+    /////////////// Get The Current Year To Automatically Change It In The Copyright ///////////////
+    document.querySelector('.copyright p span').innerHTML = new Date().getFullYear();
   }
 };
 
