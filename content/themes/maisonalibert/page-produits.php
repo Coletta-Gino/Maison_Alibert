@@ -39,7 +39,8 @@
     </div>
   </div>
 
-  <div class="container">
+  <!-- Products -->
+  <div class="products">
     <?php 
       // To select a category in order to filter the posts
       $category = isset( $_GET['category'] ) ? sanitize_text_field( $_GET['category'] ) : 'all'; 

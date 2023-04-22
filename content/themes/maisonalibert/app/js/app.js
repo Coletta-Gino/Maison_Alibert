@@ -50,42 +50,9 @@ var app = {
           }
         });
       });
-    }
+    };
 
     navSlide();
-
-    /////////////// Play/Pause Button ///////////////
-    var pausePlayBtn = document.querySelector('header .special-event a i');
-
-    pausePlayBtn.addEventListener('click', () => {
-      if (pausePlayBtn.classList.contains('fa-pause-circle-o')) {
-        document.querySelectorAll('header .special-event .special-event__items .special-event__items__single').forEach((autoScrollItems) => {
-          autoScrollItems.classList.add('active');
-        })
-        pausePlayBtn.classList.remove('fa-pause-circle-o');
-        pausePlayBtn.classList.add('fa-play-circle-o');
-      }
-      else {
-        document.querySelectorAll('header .special-event .special-event__items .special-event__items__single').forEach((autoScrollItems) => {
-          autoScrollItems.classList.remove('active');
-        })
-        pausePlayBtn.classList.remove('fa-play-circle-o');
-        pausePlayBtn.classList.add('fa-pause-circle-o');
-      }
-    });
-
-    /////////////// Events Div ///////////////
-    eventInfinite = () => {
-      var offerText = document.querySelector('.offer');
-      var offerTextDiv = offerText.querySelector('div');
-
-      for (i = 0; i < 10; i++) {
-        var clone = offerTextDiv.cloneNode(true);
-        offerText.appendChild(clone);
-      }
-    }
-
-    eventInfinite();
 
     /////////////// Selected Category ///////////////
     const categoryButtons = document.querySelectorAll('.filter button');
