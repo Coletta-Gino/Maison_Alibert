@@ -16,7 +16,11 @@
 
     <?php if ($wpqueryArticles->have_posts()): while ($wpqueryArticles->have_posts()): $wpqueryArticles->the_post(); ?>
       <article class="event">
-        <?php the_content(); ?>
+        <div class="triangle top-left"></div>
+
+        <div class="event__content">
+          <?php the_content(); ?>
+        </div>
 
         <h2><?php the_title(); ?></h2>
 
@@ -40,6 +44,8 @@
         <div class="event__price">
           <p><?php the_field('event_price'); ?></p>
         </div>
+
+        <div class="triangle bottom-right"></div>
       </article>
     <?php endwhile; endif; ?>
   </div>

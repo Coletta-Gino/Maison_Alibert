@@ -1,0 +1,40 @@
+//////////////// Skills ////////////////
+main {
+  .skills {
+    @include triangles;
+    @include triangles-appear;
+    
+    &__content {
+      margin: 1.5em 0;
+
+      // p {
+      //   text-align: center;
+      // }
+    }
+  }
+}
+    
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .skills {
+      &__content {
+        margin: 1.75em 0;
+
+        // p {
+        //   text-align: justify;
+        // }
+      }
+    }
+  }
+}
+    
+// // Desktop
+// @media screen and (min-width: $breakpoint-medium) {
+//   main {
+//     .skills {
+//       &__content {
+//       }
+//     }
+//   }
+// }

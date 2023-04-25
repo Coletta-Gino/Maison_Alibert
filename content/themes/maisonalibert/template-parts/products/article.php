@@ -10,6 +10,8 @@
       ?>
       
       <article class="product" id="product-<?php the_ID(); ?>" data-category="<?= $slug; ?>">
+        <div class="triangle top-left"></div>
+        
         <div class="product__image">
           <?php the_post_thumbnail(); ?>
         </div>
@@ -127,4 +129,6 @@
 
           <p class="product__infos__price"><?php $price = get_field_object('price'); echo $price['value']; ?>&#8239;€</p>
         </div>
+
+        <div class="triangle bottom-right"></div>
       </article>

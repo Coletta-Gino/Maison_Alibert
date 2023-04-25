@@ -2,7 +2,7 @@
 
 // 1. Abstracts
 @import 
-  // 'abstracts/mixins',
+  'abstracts/mixins',
   'abstracts/vars';
 
 // 2. Vendors
@@ -25,16 +25,19 @@
 
 // 5. Components
 @import
+  'components/best-sellers',
   'components/comments-area',
   'components/contact',
   'components/copyright',
   'components/event',
   'components/filtering',
+  'components/intro',
   'components/links',
   'components/pagination',
   'components/product-details',
   'components/product',
   'components/simplified-logo',
+  'components/skills',
   'components/social-media',
   'components/sorting',
   'components/stars_reviews';

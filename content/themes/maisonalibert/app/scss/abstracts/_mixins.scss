@@ -1,0 +1,45 @@
+// Create Triangles  
+@mixin triangles {
+  .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  .top-left {
+    border-top: 150px solid $blue-sapphire;
+    border-right: 150px solid transparent;
+    left: -150px;
+    top: -150px;
+  }
+  
+  .bottom-right {
+    border-bottom: 50px solid $blue-sapphire;
+    border-left: 50px solid transparent;
+    right: -50px;
+    bottom: -50px;
+  }
+}
+
+// Triangles Appear On Hover
+@mixin triangles-appear {
+  &:hover {
+    .triangle {
+      opacity: 1;
+    }
+
+    .top-left {
+      left: 0;
+      top: 0;
+      border-top-left-radius: 25px;
+    }
+
+    .bottom-right {
+      right: 0;
+      bottom: 0;
+      border-bottom-right-radius: 25px;
+    }
+  }
+}

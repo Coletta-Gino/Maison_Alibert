@@ -1,0 +1,77 @@
+//////////////// Intro ////////////////
+main {
+  .intro {
+    @include triangles;
+    @include triangles-appear;
+    
+    &__content {
+      margin: 1.5em 0;
+
+      p {
+        text-align: center;
+      }
+    }
+
+    &__picture {
+      margin-top: 1.5em;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+    
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .intro {
+      &__content {
+        margin: 1.75em 0;
+
+        p {
+          text-align: justify;
+        }
+      }
+
+      &__picture {
+        margin-top: 1.75em;
+        text-align: center;
+
+        img {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+    
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+
+      &__content {
+        width: 60%;
+        // margin: 2em 0;
+        margin: unset;
+      }
+
+      &__picture {
+        width: 30%;
+        // margin-top: 2em;
+        margin: unset;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

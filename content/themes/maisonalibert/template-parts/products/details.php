@@ -1,4 +1,3 @@
-  <!-- NEW -->
   <section class="details">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
       <h1><?php the_title(); ?></h1>
@@ -16,8 +15,7 @@
       <div class="details__wrapper__right">
         <div class="colors">
           <p>Disponible en :</p>
-      
-          <!-- <div class="product__infos__colors"> -->
+          
           <div class="colors-available">
             <?php 
               $colors = array(

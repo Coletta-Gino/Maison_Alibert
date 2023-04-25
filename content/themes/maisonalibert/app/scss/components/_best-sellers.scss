@@ -1,0 +1,68 @@
+//////////////// Best Sellers ////////////////
+main {
+  .best-sellers {
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    padding: unset;
+    border-radius: unset;
+
+    &__content {
+      margin: 1.5em 0;
+
+      // p {
+      //   text-align: center;
+      // }
+    }
+
+    // &__items {
+      
+    // }
+
+    &__cta {
+      text-align: center;
+    }
+  }
+}
+    
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .best-sellers {
+      &__content {
+        margin: 1.75em 0;
+
+        // p {
+        //   text-align: justify;
+        // }
+      }
+
+      // &__items {
+      
+      // }
+
+      // &__cta {
+        
+      // }
+    }
+  }
+}
+    
+// // Desktop
+// @media screen and (min-width: $breakpoint-medium) {
+//   main {
+//     .best-sellers {
+//       &__content {
+
+//       }
+
+//       &__items {
+      
+//       }
+
+//       &__cta {
+
+//       }
+//     }
+//   }
+// }
