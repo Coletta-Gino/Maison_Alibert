@@ -14,25 +14,34 @@
 
       <div class="details__wrapper__right">
         <div class="colors">
-          <p>Disponible en :</p>
+          <?php 
+            $colors = array(
+              get_field_object('color_1'),
+              get_field_object('color_2'),
+              get_field_object('color_3'),
+              get_field_object('color_4'),
+              get_field_object('color_5')
+            );
+
+            $has_colors = false;
+            foreach($colors as $color) {
+              if ($color['value']) {
+                $has_colors = true;
+                break;
+              }
+            }
+            
+            if ($has_colors) : 
+          ?>
+            <p>Disponible en :</p>
+          <?php endif; ?>
           
           <div class="colors-available">
-            <?php 
-              $colors = array(
-                get_field_object('color_1'),
-                get_field_object('color_2'),
-                get_field_object('color_3'),
-                get_field_object('color_4'),
-                get_field_object('color_5')
-              );
-
-              if ($colors) : ?>
-                <?php foreach($colors as $color) : ?>
-                  <?php if ($color['value']) : ?>
-                    <div style="background-color:<?= $color['value']; ?>"></div>
-                  <?php endif; ?>
-                <?php endforeach; ?>
+            <?php foreach($colors as $color) : ?>
+              <?php if ($color['value']) : ?>
+                <div style="background-color:<?= $color['value']; ?>"></div>
               <?php endif; ?>
+            <?php endforeach; ?>
           </div>
         </div>
 

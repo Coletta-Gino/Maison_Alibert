@@ -1,20 +1,43 @@
-@font-face {
-  font-family: "Balgor Regular";
-  src: url("/content/themes/maisonalibert/app/assets/fonts/Balgor.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+// @font-face {
+//   font-family: "Balgor Regular";
+//   src: url("/content/themes/maisonalibert/app/assets/fonts/Balgor.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "Bodoni 72 Smallcaps Book";
+//   src: url("/content/themes/maisonalibert/app/assets/fonts/Bodoni 72 Smallcaps Book.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "Bodoni 72 Book";
+//   src: url("/content/themes/maisonalibert/app/assets/fonts/bodoni-72-book.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-title;
+  // font-family: $font-family-content;
+  // font-family: $font-family-alt;
 }
 
-@font-face {
-  font-family: "Bodoni 72 Smallcaps Book";
-  src: url("/content/themes/maisonalibert/app/assets/fonts/Bodoni 72 Smallcaps Book.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+p {
+  // font-family: $font-family-title;
+  // font-family: $font-family-content;
+  font-family: $font-family-alt;
 }
 
-@font-face {
-  font-family: "Bodoni 72 Book";
-  src: url("/content/themes/maisonalibert/app/assets/fonts/bodoni-72-book.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+a {
+  // font-family: $font-family-title;
+  // font-family: $font-family-content;
+  font-family: $font-family-alt;
 }

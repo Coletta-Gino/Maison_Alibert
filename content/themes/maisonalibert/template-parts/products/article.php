@@ -92,7 +92,7 @@
 		          $title_after = '</h3>';
 
 		          if ($link === TRUE) {
-			          $output = the_title( sprintf( $title_before . '<a href="%s">', esc_url( get_permalink() ) ), '</a>' . $title_after );
+			          $output = the_title( sprintf( $title_before . '<a href="%s" class="needle-link">', esc_url( get_permalink() ) ), '<span class="needle">&#129697;</span></a>' . $title_after );
 		          } 
               else {
 			          $output = $title_before . get_the_title() . $title_after;

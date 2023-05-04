@@ -19,8 +19,6 @@
 
     <header style="background-image: url('<?= $image_attributes[0]; ?>');">
       <?php get_template_part('template-parts/header/nav'); ?>
-
-      <div class="triangle"></div>
     </header>
 
     <!-- Main -->

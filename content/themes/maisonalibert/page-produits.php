@@ -6,7 +6,7 @@
   <div class="options">
     <!-- Filter System -->
     <div class="filter">
-      <button class="selected" data-category="all">Tous</button>
+      <button class="" data-category="all">Tous</button>
 
       <?php
         // TODO => be careful to change the value of 'parent' = the id of the products category !!!
@@ -21,7 +21,10 @@
         foreach ($categories as $category) {
           $category_slug = $category->slug;
           $category_name = $category->name;
-          $active_class = $category_slug === $category ? 'selected' : '';
+          $active_class = '';
+          if (isset($_GET['category']) && $_GET['category'] === $category_slug) {
+            $active_class = 'selected';
+          }
           echo '<button class="' . $active_class . '" data-category="' . $category_slug . '">' . $category_name . '</button>';
         }
       ?>
@@ -29,13 +32,25 @@
 
     <!-- Sort System -->
     <div class="sort">
-      <a href="<?= add_query_arg( 'sort', 'date_asc' ); ?>">les plus anciens</a>
-      <a href="<?= add_query_arg( 'sort', 'price_asc' ); ?>">prix croissant</a>
-      <a href="<?= add_query_arg( 'sort', 'price_desc' ); ?>">prix décroissant</a>
+      <div>
+        <div>
+          <p>Trier par</p>
+        </div>
 
-      <?php if ( isset( $_GET['sort'] ) ) : ?>
-        <a href="<?= remove_query_arg( 'sort' ); ?>">annuler le tri</a>
-      <?php endif; ?>
+        <div id="btn" class="btn">
+          <i class="fa fa-chevron-down" aria-hidden="true" id="arrow"></i>
+        </div>
+      </div>
+
+      <div class="dropdown" id="dropdown">
+        <a href="<?= add_query_arg( 'sort', 'date_asc' ); ?>">Ancienneté</a>
+        <a href="<?= add_query_arg( 'sort', 'price_asc' ); ?>">Prix croissant</a>
+        <a href="<?= add_query_arg( 'sort', 'price_desc' ); ?>">Prix décroissant</a>
+
+        <?php if ( isset( $_GET['sort'] ) ) : ?>
+          <a href="<?= remove_query_arg( 'sort' ); ?>">Annuler le tri</a>
+        <?php endif; ?>
+      </div>
     </div>
   </div>
 

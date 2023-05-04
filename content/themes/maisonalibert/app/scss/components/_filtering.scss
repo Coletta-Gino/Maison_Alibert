@@ -3,8 +3,8 @@ main {
   .options {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: baseline;
     margin: 2.5em 0 1.25em;
 
     .filter {
@@ -25,7 +25,8 @@ main {
         transition: 0.5s;
         will-change: box-shadow, transform;
 
-        &:hover {
+        &:hover,
+        &.selected {
           box-shadow: inset 10px 10px 20px #c0bbb5,
                       inset -10px -10px 20px #ffffff,
                       -2px -2px 4px #ccc7c0,
@@ -57,9 +58,12 @@ main {
 @media screen and (min-width: $breakpoint-medium) {
   main {
     .options {
+      justify-content: space-between;
       margin: 4.5em 0 2.75em;
   
       .filter {
+        max-width: 80%;
+
         button {
           padding: 15px 30px;
         }

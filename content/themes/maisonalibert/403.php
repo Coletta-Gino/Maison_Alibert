@@ -7,7 +7,7 @@
 
   <p>L'accès à cette page est interdit.</p>
 
-  <a href="<?= home_url(); ?>">Retour</a>
+  <a href="<?= home_url(); ?>" class="needle-link">Retour<span class="needle">&#129697;</span></a>
 </article>
 
 <?php get_footer();?>

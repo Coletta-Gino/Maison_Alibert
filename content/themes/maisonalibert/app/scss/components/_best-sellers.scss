@@ -21,6 +21,7 @@ main {
 
     &__cta {
       text-align: center;
+      margin: 0 0 0.5em;
     }
   }
 }
@@ -41,28 +42,28 @@ main {
       
       // }
 
-      // &__cta {
-        
-      // }
+      &__cta {
+        margin: 0 0 0.75em;
+      }
     }
   }
 }
     
-// // Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   main {
-//     .best-sellers {
-//       &__content {
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .best-sellers {
+      &__content {
+        margin: 2em 0;
+      }
 
-//       }
-
-//       &__items {
+      // &__items {
       
-//       }
+      // }
 
-//       &__cta {
-
-//       }
-//     }
-//   }
-// }
+      &__cta {
+        margin: -3em 0 1em;
+      }
+    }
+  }
+}

@@ -8,10 +8,14 @@ var app = {
       navigation.classList.toggle('sticky', window.scrollY > 0);
     });
 
-    /////////////// Header Style ///////////////
-    window.addEventListener('scroll', () => {
-      var triangle = document.querySelector('.triangle');
-      triangle.classList.toggle('resized', window.scrollY > 0);
+    /////////////// Add Classname And <span> To <a> In The Nav ///////////////
+    const navLinksA = document.querySelectorAll('.menu-item a');
+    navLinksA.forEach((navLinkA) => {
+      navLinkA.className = 'needle-link-alt';
+      const navSpan = document.createElement('span');
+      navSpan.className = 'needle';
+      navSpan.innerHTML = '&#129697;';
+      navLinkA.appendChild(navSpan);
     });
 
     /////////////// Swipe Menu ///////////////
@@ -54,8 +58,38 @@ var app = {
 
     navSlide();
 
+    // NEW
+
+    /////////////// Dropdown Animation ///////////////
+    // const dropdownBtn = document.querySelector("#btn");
+    // const dropdownMenu = document.querySelector("#dropdown");
+    // const toggleArrow = document.querySelector("#arrow");
+
+    // const toggleDropdown = () => {
+    //   dropdownMenu.classList.toggle("is-open");
+    //   toggleArrow.classList.toggle("arrow");
+    // };
+
+    // dropdownBtn.addEventListener("click", (e) => {
+    //   e.stopPropagation();
+    //   toggleDropdown();
+    // });
+
+    // document.addEventListener("click", (e) => {
+    //   // Check if the clicked element is a descendant of the dropdown menu
+    //   if (!dropdownMenu.contains(e.target)) {
+    //     if (dropdownMenu.classList.contains("is-open")) {
+    //       toggleDropdown();
+    //     }
+    //   }
+    // });
+
+
+    // OLD
     /////////////// Selected Category ///////////////
     const categoryButtons = document.querySelectorAll('.filter button');
+    let currentButton = document.querySelector('.filter button[data-category="all"]');
+
     categoryButtons.forEach(button => {
       button.addEventListener('click', (event) => {
         event.preventDefault();
@@ -63,7 +97,22 @@ var app = {
         const currentUrl = new URL(window.location.href);
         currentUrl.searchParams.set('category', category);
         window.location.href = currentUrl.href;
+
+        if (currentButton !== button) {
+          currentButton.classList.remove('selected');
+          button.classList.add('selected');
+          currentButton = button;
+        }
       });
+    });
+
+    /////////////// Add Class To Actual Page In Pagination ///////////////
+    const lis = document.querySelectorAll('ul.page-numbers li');
+
+    lis.forEach(li => {
+      if (li.querySelector('span[aria-current="page"]')) {
+        li.classList.add('actual');
+      }
     });
 
     /////////////// Add User's First Character Before His Name ///////////////
@@ -91,6 +140,15 @@ var app = {
 
       // Replace the <a> element with the new <p> element
       link.parentNode.replaceChild(newElement, link);
+    });
+
+    /////////////// Add <span> To <a> In The Comment Reply ///////////////
+    const replyLinks = document.querySelectorAll('.comment-reply-link');
+    replyLinks.forEach((replyLink) => {
+      const replySpan = document.createElement('span');
+      replySpan.className = 'needle';
+      replySpan.innerHTML = '&#129697;';
+      replyLink.appendChild(replySpan);
     });
 
     /////////////// Get The Current Year To Automatically Change It In The Copyright ///////////////

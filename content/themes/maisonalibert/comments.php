@@ -201,7 +201,7 @@
         <div class="add-review">
           <h3>Donnez votre avis ici</h3>
 
-          <a href="#respond">Ajouter un commentaire</a>
+          <a href="#respond" class="needle-link">Ajouter un commentaire<span class="needle">&#129697;</span></a>
         </div>
       </div>
     

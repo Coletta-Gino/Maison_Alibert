@@ -61,57 +61,60 @@ main {
               display: flex;
               align-items: baseline;
 
+              b {
+                color: $chinese-black;
+              }
+  
               i {
+                color: $ruddy-pink;
                 margin-left: 0.25em;
               }
             }
 
-            b {
-              color: $chinese-black;
+            &:nth-child(2) {
+              progress[value] {
+                // Reset the default appearance
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+  
+                // Dimensions
+                width: 225px;
+                height: 15px;
+  
+                // Get rid of default border in Firefox
+                border: none;
+  
+                // Base
+                background-color: #eee;
+                border-radius: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  
+                // For IE10
+                color: $ruddy-pink;
+              }
+  
+              progress::-moz-progress-bar {
+                background: $ruddy-pink;
+                border-radius: 15px 0 0 15px; 
+              }
+  
+              // Style the container
+              progress[value]::-webkit-progress-bar {
+                background-color: #eee;
+                border-radius: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+              }
+  
+              // Style the bar
+              progress[value]::-webkit-progress-value {
+                background-color: $ruddy-pink;
+                border-radius: 15px 0 0 15px; 
+              }
             }
 
-            i {
-              color: $ruddy-pink;
-            }
-
-            progress[value] {
-              // Reset the default appearance
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-
-              // Dimensions
-              width: 225px;
-              height: 15px;
-
-              // Get rid of default border in Firefox
-              border: none;
-
-              // Base
-              background-color: #eee;
-              border-radius: 15px;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-
-              // For IE10
-              color: $ruddy-pink;
-            }
-
-            progress::-moz-progress-bar {
-              background: $ruddy-pink;
-              border-radius: 15px 0 0 15px; 
-            }
-
-            // Style the container
-            progress[value]::-webkit-progress-bar {
-              background-color: #eee;
-              border-radius: 15px;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-            }
-
-            // Style the bar
-            progress[value]::-webkit-progress-value {
-              background-color: $ruddy-pink;
-              border-radius: 15px 0 0 15px; 
+            &:nth-child(3) {
+              color: $nickel;
             }
           }
         } 
@@ -509,9 +512,11 @@ main {
             .column {
               margin: 0.5em 0;
 
-              progress[value] {
-                width: 300px;
-                height: 20px;
+              &:nth-child(2) {
+                progress[value] {
+                  width: 300px;
+                  height: 20px;
+                }
               }
             }
           } 

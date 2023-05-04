@@ -18,12 +18,12 @@
           <!-- body=[content] to allow the user to directly write the content of his message -->
           <li>
             <i class="fa fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:<?php the_field('mail'); ?>?subject=Mail%20Envoyé%20Depuis%20Le%20Site&body=" title="Mail">contact@maisonalibert.fr</a>
+            <a href="mailto:<?php the_field('mail'); ?>?subject=Mail%20Envoyé%20Depuis%20Le%20Site&body=" title="Mail" class="needle-link-alt">contact@maisonalibert.fr<span class="needle">&#129697;</span></a>
           </li>
 
           <li>
             <i class="fa fa-phone" aria-hidden="true"></i>
-            <a href="tel:+<?php the_field('phone_number'); ?>" title="Téléphone">06 46 00 87 08</a>
+            <a href="tel:+<?php the_field('phone_number'); ?>" title="Téléphone" class="needle-link-alt">06 46 00 87 08<span class="needle">&#129697;</span></a>
           </li>
         <?php endwhile; endif; ?>
       </ul>

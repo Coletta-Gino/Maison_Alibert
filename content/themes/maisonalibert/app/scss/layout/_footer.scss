@@ -11,45 +11,16 @@ footer {
   padding: 1em 1em 0.5em;
   z-index: 5;
 
-  // Linear Gradient
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   bottom: 0;
-  //   right: 0;
-  //   height: 0;
-  //   width: 0;
-  //   display: inline-block;
-  //   border-bottom: 345px solid #1d616c;
-  //   border-left: 1170px solid transparent;
-  //   z-index: -1;
-  // }
-
-  // Triangle Left
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: -125px;
-  //   left: 0;
-  //   // display : inline-block;
-  //   // width : 0;
-  //   // height : 0;
-  //   border-right : 160px solid transparent;
-  //   border-bottom : 125px solid $blue-sapphire;
-  // }
-
-  // Triangle Right
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   top: -125px;
-  //   right: 0;
-  //   // display : inline-block;
-  //   // width : 0;
-  //   // height : 0;
-  //   border-left : 160px solid transparent;
-  //   border-bottom : 125px solid $blue-sapphire;
-  // }
+  // STITCHING EFFECT
+  // padding: 20px;
+  // margin: 10px;
+  // background: #ff0030;
+  // color: #fff;
+  // line-height: 1.3em;
+  border-top: 2px dashed $alabaster;
+  border-radius: 25px 25px 0 0;
+  box-shadow: 0 0 0 6px $blue-sapphire, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+  // text-shadow: -1px -1px #aa3030;
 }
   
 // Tablet

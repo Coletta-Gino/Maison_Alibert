@@ -34,7 +34,7 @@
     <p>Votre recherche est infructueuse. Veuillez essayer avec d&apos;autres termes de recherche.</p>
   <?php endif; ?>
 
-  <a href="<?= home_url(); ?>">Retour</a>
+  <a href="<?= home_url(); ?>" class="needle-link">Retour<span class="needle">&#129697;</span></a>
 </div>
 
 <?php get_footer(); ?>

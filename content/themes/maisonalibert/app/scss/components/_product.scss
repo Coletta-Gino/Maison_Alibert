@@ -13,7 +13,6 @@ main {
       flex-direction: column;
       justify-content: start;
       align-items: center;
-      color: $nickel;
       background-color: $alabaster;
       box-shadow: inset -10px -10px 20px #c0bbb5,
                   inset 10px 10px 20px #ffffff,
@@ -32,6 +31,7 @@ main {
         border: solid 1px $blue-sapphire;
         border-radius: 15px;
         overflow: hidden;
+        z-index: 5;
 
         img {
           width: 100%;
@@ -47,7 +47,22 @@ main {
         align-items: center;
 
         &__rating {
+          display: flex;
+          align-items: center;
           margin: 0.5em 0 0.25em;
+
+          i {
+            color: $ruddy-pink;
+            // margin-right: 0.25em;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          #total_review {
+            color: $nickel;
+          }
         }
 
         &__name {

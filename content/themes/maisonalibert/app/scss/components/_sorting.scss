@@ -1,24 +1,121 @@
 //////////////// Sorting ////////////////
-// .options {
-//   .sort {
+main {
+  .options {
+    .sort {
+      color: $chinese-black;
+      background-color: $alabaster;
+      box-shadow: inset -10px -10px 20px #c0bbb5,
+                  inset 10px 10px 20px #ffffff,
+                  2px 2px 4px #ccc7c0,
+                  -2px -2px 4px #ffffff;
+      padding: 10px 20px;
+      margin: 0 0.5em;
+      border-radius: 15px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: 0.5s;
+      will-change: box-shadow, transform;
 
-//   }
-// }
+      div {
+        &:first-child {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+
+        &.btn {
+          .fa-chevron-down {
+            transition: 0.2s ease;
+          }
+
+          .arrow {
+            transform: rotate(-180deg);
+            transition: 0.2s ease;
+          }
+        }
+
+        &.dropdown {
+          height: 0px;
+          transition: all 150ms linear 0s;
+          overflow: hidden;
+          visibility: hidden;
+          opacity: 0;
+
+          a {
+            display: block;
+            padding: 10px 20px;
+            margin: 0.25em 0.5em 0.75em;
+            text-decoration: none;
+            color: #333;
+            border-radius: 7px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: 0.5s;
+            will-change: box-shadow, transform;
+            
+            &:hover {
+              box-shadow: inset 10px 10px 20px #c0bbb5,
+                          inset -10px -10px 20px #ffffff,
+                          -2px -2px 4px #ccc7c0,
+                          2px 2px 4px #ffffff;
+              transition: 0.5s;
+              transform: translateY(-2px) rotateX(5deg);
+            }
+          }
+
+          &.is-open {
+            height: auto;
+            transition: all 150ms linear 0s;
+            overflow: hidden;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
     
 // Tablet
-// @media screen and (min-width: $breakpoint-small) {
-//   .options {
-//     .filter {
-      
-//     }
-//   }
-// }
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .options {
+      .sort {
+        padding: 12.5px 25px;
+
+        div {
+          &.dropdown {
+            a {
+              padding: 12.5px 25px;
+              margin: 0.5em 0 1em;
+              border-radius: 7.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
     
 // Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   .options {
-//     .filter {
-      
-//     }
-//   }
-// }
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .options {
+      .sort {
+        padding: 15px 30px;
+
+        div {
+          &.dropdown {
+            a {
+              padding: 15px 30px;
+              margin: 0.75em 0 1.25em;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

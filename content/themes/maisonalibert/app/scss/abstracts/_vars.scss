@@ -1,8 +1,9 @@
 // Variables (fonts, colors, sizes, breakpoints, ...)
 // Fonts + Font Awesome 4.7.0 Icons
 $fa-font-path: '~font-awesome/fonts';
-// $font-family-title: 'Raleway', sans-serif;
-// $font-family-content: 'Merriweather', serif;
+$font-family-title: 'balgor-regular', serif;
+$font-family-content: 'bodoni-72-smallcaps', serif; // TOUJOURS EN MAJUSCULES !
+$font-family-alt: 'bodoni-72-book', sans-serif;
 
 // Colors
 $blue-sapphire: hsl(188, 58%, 27%); // or rgb(29, 97, 108), or #1d616c

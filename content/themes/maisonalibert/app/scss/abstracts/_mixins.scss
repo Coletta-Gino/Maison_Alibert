@@ -9,17 +9,31 @@
   }
   
   .top-left {
+    // OLD
     border-top: 150px solid $blue-sapphire;
     border-right: 150px solid transparent;
     left: -150px;
     top: -150px;
+
+    // NEW
+    // border-top: 75px solid hsl(188deg, 58%, 27%);
+    // border-right: 250px solid transparent;
+    // left: -75px;
+    // top: -250px;
   }
   
   .bottom-right {
+    // OLD
     border-bottom: 50px solid $blue-sapphire;
     border-left: 50px solid transparent;
     right: -50px;
     bottom: -50px;
+
+    // NEW
+    // border-bottom: 75px solid $blue-sapphire;
+    // border-left: 250px solid transparent;
+    // right: -250px;
+    // bottom: -75px;
   }
 }
 

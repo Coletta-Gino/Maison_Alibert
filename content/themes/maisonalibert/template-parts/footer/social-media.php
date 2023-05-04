@@ -12,7 +12,7 @@
         ?>
 
         <?php if ($wpqueryArticles->have_posts()): while ($wpqueryArticles->have_posts()): $wpqueryArticles->the_post(); ?>
-          <li><a href="<?php the_field('facebook');?>" title="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-          <li><a href="<?php the_field('instagram'); ?>" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="<?php the_field('facebook');?>" title="Facebook" class="link"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a href="<?php the_field('instagram'); ?>" title="Instagram" class="link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
         <?php endwhile; endif; ?>
       </ul>

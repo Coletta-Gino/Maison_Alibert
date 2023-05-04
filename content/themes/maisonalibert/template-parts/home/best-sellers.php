@@ -43,7 +43,7 @@
 
       <div class="best-sellers__cta">
         <!-- TODO => be careful to change the value of 'get_permalink' = the id of the products page !!! -->
-        <a href="<?= get_permalink(2); ?>">Voir tous les produits</a>
+        <a href="<?= get_permalink(2); ?>" class="needle-link">Voir tous les produits<span class="needle">&#129697;</span></a>
       </div>
     <?php endwhile; endif; ?>
   </section>
