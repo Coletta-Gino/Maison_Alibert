@@ -58,34 +58,29 @@ var app = {
 
     navSlide();
 
-    // NEW
-
     /////////////// Dropdown Animation ///////////////
-    // const dropdownBtn = document.querySelector("#btn");
-    // const dropdownMenu = document.querySelector("#dropdown");
-    // const toggleArrow = document.querySelector("#arrow");
+    $(document).ready(function() {
+      const $dropdownBtn = $("#btn");
+      const $dropdownMenu = $("#dropdown");
+      const $toggleArrow = $("#arrow");
 
-    // const toggleDropdown = () => {
-    //   dropdownMenu.classList.toggle("is-open");
-    //   toggleArrow.classList.toggle("arrow");
-    // };
+      const toggleDropdown = () => {
+        $dropdownMenu.toggleClass("is-open");
+        $toggleArrow.toggleClass("arrow");
+      };
 
-    // dropdownBtn.addEventListener("click", (e) => {
-    //   e.stopPropagation();
-    //   toggleDropdown();
-    // });
+      $dropdownBtn.on("click", function(e) {
+        e.stopPropagation();
+        toggleDropdown();
+      });
 
-    // document.addEventListener("click", (e) => {
-    //   // Check if the clicked element is a descendant of the dropdown menu
-    //   if (!dropdownMenu.contains(e.target)) {
-    //     if (dropdownMenu.classList.contains("is-open")) {
-    //       toggleDropdown();
-    //     }
-    //   }
-    // });
+      $(document).on("click", function() {
+        if ($dropdownMenu.hasClass("is-open")) {
+          toggleDropdown();
+        }
+      });
+    });
 
-
-    // OLD
     /////////////// Selected Category ///////////////
     const categoryButtons = document.querySelectorAll('.filter button');
     let currentButton = document.querySelector('.filter button[data-category="all"]');
@@ -150,6 +145,28 @@ var app = {
       replySpan.innerHTML = '&#129697;';
       replyLink.appendChild(replySpan);
     });
+
+    /////////////// Add <span> To <a> In The Cancel Comment Reply Link ///////////////
+    const cancelReplyLink = document.getElementById('cancel-comment-reply-link');
+    if (cancelReplyLink) {
+      const replySpan = document.createElement('span');
+      replySpan.className = 'needle';
+      replySpan.innerHTML = '&#129697;';
+      cancelReplyLink.appendChild(replySpan);
+    }
+
+    /////////////// Replace <a> To <cite> In The Author's Comment Reply ///////////////
+    const liElement = document.querySelector('li.comment.bypostauthor');
+    const citeElement = liElement.querySelector('cite.fn');
+
+    // Check if the <cite> element contains an <a> element
+    if (citeElement.querySelector('a')) {
+      // Get the text content of the <cite> element
+      const text = citeElement.textContent;
+
+      // Replace the <cite> element's content with just the text
+      citeElement.innerHTML = text;
+    }
 
     /////////////// Get The Current Year To Automatically Change It In The Copyright ///////////////
     document.querySelector('.copyright p span').innerHTML = new Date().getFullYear();

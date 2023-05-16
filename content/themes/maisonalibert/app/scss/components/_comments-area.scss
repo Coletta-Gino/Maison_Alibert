@@ -137,6 +137,14 @@ main {
       margin-top: 5em;
 
       .comment {
+        &.bypostauthor {
+          .first-char {
+            color: $blue-sapphire !important;
+            background-color: $alabaster !important;
+            border: solid 2px $blue-sapphire !important;
+          }
+        }
+
         .comment-body {
           display: flex;
           flex-direction: column;
@@ -217,6 +225,15 @@ main {
         }
 
         .comment-respond {
+          width: 90%;
+          margin: 0 auto;
+
+          h3 {
+            small {
+              margin-left: 0.5em;
+            }
+          }
+
           .comment-form {
             p {
               &.comment-form-rating {
@@ -229,6 +246,9 @@ main {
     }
 
     .comment-respond {
+      width: 90%;
+      margin: 0 auto;
+
       .comment-form {
         display: flex;
         flex-direction: column;
@@ -423,10 +443,16 @@ main {
               margin-top: 1em;
             }
           }
+
+          .comment-respond {
+            width: 70%;
+          }
         }
       }
   
       .comment-respond {
+        width: 70%;
+
         .comment-form {
           p {
             &.comment-notes {
@@ -563,10 +589,16 @@ main {
               margin-top: 1.25em;
             }
           }
+
+          .comment-respond {
+            width: 45%;
+          }
         }
       }
   
       .comment-respond {
+        width: 45%;
+
         .comment-form {
           p {
             &.comment-notes {

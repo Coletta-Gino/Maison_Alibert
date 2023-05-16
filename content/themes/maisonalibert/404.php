@@ -1,7 +1,7 @@
 <?php get_header();?>
 
-<article class="errors" style="min-height: 100vh;">
-  <h3>Oops, la page est introuvable</h3>
+<article class="errors">
+  <h3>Aïe, la page est introuvable</h3>
 
   <h2>404</h2>
 
