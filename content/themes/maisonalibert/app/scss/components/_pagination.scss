@@ -10,11 +10,7 @@ main {
 
       li {
         list-style: none;
-        background-color: $alabaster;
-        box-shadow: inset -10px -10px 20px #c0bbb5,
-                    inset 10px 10px 20px #ffffff,
-                    2px 2px 4px #ccc7c0,
-                    -2px -2px 4px #ffffff;
+        @include external-shadow;
         padding: 7.5px 15px;
         margin: 0 0.25em 0.5em;
         border-radius: 15px;
@@ -32,12 +28,7 @@ main {
         &:hover,
         &:has(span[aria-current="page"]),
         &.actual {
-          box-shadow: inset 10px 10px 20px #c0bbb5,
-                      inset -10px -10px 20px #ffffff,
-                      -2px -2px 4px #ccc7c0,
-                      2px 2px 4px #ffffff;
-          transition: 0.5s;
-          transform: translateY(-2px) rotateX(5deg);
+          @include shadow-on-hover;
         }
       }
     }

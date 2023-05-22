@@ -7,8 +7,9 @@ footer {
 
     p {
       margin: 0;
-      color: $chinese-black;
-      -webkit-text-stroke: 0.25px $alabaster;
+      color: $alabaster;
+      // color: $chinese-black;
+      // -webkit-text-stroke: 0.25px $alabaster;
     }
   }
 }
@@ -17,7 +18,7 @@ footer {
 @media screen and (min-width: $breakpoint-small) {
   footer {
     .copyright {
-      margin-top: 1em;
+      margin-top: 0;
     }
   }
 }
@@ -26,7 +27,7 @@ footer {
 @media screen and (min-width: $breakpoint-medium) {
   footer {
     .copyright {
-      margin-top: 1.25em;
+      margin-top: 0;
     }
   }
 }

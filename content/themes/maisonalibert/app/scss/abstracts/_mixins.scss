@@ -1,3 +1,31 @@
+// External Shadow
+@mixin external-shadow {
+  background-color: $alabaster;
+  box-shadow: inset -10px -10px 20px #c0bbb5,
+              inset 10px 10px 20px #ffffff,
+              2px 2px 4px #ccc7c0,
+              -2px -2px 4px #ffffff;
+}
+
+// Internal Shadow On Hover
+@mixin shadow-on-hover {
+  box-shadow: inset 10px 10px 20px #c0bbb5,
+              inset -10px -10px 20px #ffffff,
+              -2px -2px 4px #ccc7c0,
+              2px 2px 4px #ffffff;
+  transition: 0.5s;
+  transform: translateY(-2px) rotateX(5deg);
+}
+
+// Internal Shadow
+@mixin internal-shadow {
+  background-color: $alabaster;
+  box-shadow: inset 5px 5px 10px #c0bbb5,
+              inset -5px -5px 10px #ffffff,
+              -1px -1px 2px #ccc7c0,
+              1px 1px 2px #ffffff;
+}
+
 // Create Triangles  
 @mixin triangles {
   .triangle {
@@ -9,31 +37,17 @@
   }
   
   .top-left {
-    // OLD
     border-top: 150px solid $blue-sapphire;
     border-right: 150px solid transparent;
     left: -150px;
     top: -150px;
-
-    // NEW
-    // border-top: 75px solid hsl(188deg, 58%, 27%);
-    // border-right: 250px solid transparent;
-    // left: -75px;
-    // top: -250px;
   }
   
   .bottom-right {
-    // OLD
     border-bottom: 50px solid $blue-sapphire;
     border-left: 50px solid transparent;
     right: -50px;
     bottom: -50px;
-
-    // NEW
-    // border-bottom: 75px solid $blue-sapphire;
-    // border-left: 250px solid transparent;
-    // right: -250px;
-    // bottom: -75px;
   }
 }
 

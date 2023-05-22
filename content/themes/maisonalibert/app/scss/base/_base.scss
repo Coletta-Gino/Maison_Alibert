@@ -18,14 +18,6 @@ h4 {
   color: $ruddy-pink;
   // text-shadow: 3px 3px 2px rgba(240, 234, 226, 0.5);
   z-index: 5;
-
-  // &::before {
-  //   content: '';
-  //   width: 10%;
-  //   height: 10px;
-  //   background-color: $blue-sapphire;
-  //   box-shadow: 5px 5px 10px -1px rgb(0 0 0 / 25%), -5px -5px 10px -1px rgb(255 255 255 / 75%);
-  // }
 }
 
 h1 {
@@ -55,11 +47,7 @@ section {
   position: relative;
   width: 90%;
   // color: $nickel;
-  background-color: $alabaster;
-  box-shadow: inset -10px -10px 20px #c0bbb5,
-              inset 10px 10px 20px #ffffff,
-              2px 2px 4px #ccc7c0,
-              -2px -2px 4px #ffffff;
+  @include external-shadow;
   padding: 1em;
   margin: 1em auto 3em;
   border-radius: 25px;
@@ -68,10 +56,6 @@ section {
 
 //////////////// LINKS ////////////////
 a {
-  // BASE
-  // &.link {
-  // }
-
   &.needle-link,
   &.comment-reply-link,
   &#cancel-comment-reply-link {
@@ -94,6 +78,7 @@ a {
   
     &:hover {
       color: $chinese-black;
+      -webkit-text-stroke: 0.25px $chinese-black;
   
       .needle {
         opacity: 1;
@@ -140,7 +125,7 @@ a {
     }
   
     &:hover {
-      color: $chinese-black;
+      // color: $chinese-black;
       -webkit-text-stroke: 0.25px $alabaster;
   
       .needle {
@@ -172,11 +157,7 @@ a {
 //////////////// INPUTS/BUTTONS ////////////////
 input {
   color: $chinese-black;
-  background-color: $alabaster;
-  box-shadow: inset -10px -10px 20px #c0bbb5,
-              inset 10px 10px 20px #ffffff,
-              2px 2px 4px #ccc7c0,
-              -2px -2px 4px #ffffff;
+  @include external-shadow;
   // text-transform: capitalize;
   padding: 10px 20px;
   margin: 0 0.5em 1em;
@@ -188,12 +169,7 @@ input {
   will-change: box-shadow, transform;
 
   &:hover {
-    box-shadow: inset 10px 10px 20px #c0bbb5,
-                inset -10px -10px 20px #ffffff,
-                -2px -2px 4px #ccc7c0,
-                2px 2px 4px #ffffff;
-    transition: 0.5s;
-    transform: translateY(-2px) rotateX(5deg);
+    @include shadow-on-hover;
   }
 }
     

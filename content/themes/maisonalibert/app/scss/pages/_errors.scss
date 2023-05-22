@@ -9,11 +9,7 @@ main {
     justify-content: center;
     align-items: center;
     // color: $nickel;
-    background-color: $alabaster;
-    box-shadow: inset -10px -10px 20px #c0bbb5,
-                inset 10px 10px 20px #ffffff,
-                2px 2px 4px #ccc7c0,
-                -2px -2px 4px #ffffff;
+    @include external-shadow;
     padding: 1em;
     margin: 1em auto;
     border-radius: 25px;

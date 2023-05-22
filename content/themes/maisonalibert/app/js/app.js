@@ -10,13 +10,28 @@ var app = {
 
     /////////////// Add Classname And <span> To <a> In The Nav ///////////////
     const navLinksA = document.querySelectorAll('.menu-item a');
-    navLinksA.forEach((navLinkA) => {
-      navLinkA.className = 'needle-link-alt';
-      const navSpan = document.createElement('span');
-      navSpan.className = 'needle';
-      navSpan.innerHTML = '&#129697;';
-      navLinkA.appendChild(navSpan);
-    });
+
+    function updateNavLinksClass() {
+      const windowWidth = window.innerWidth;
+      const newClassName = windowWidth < 768 ? 'needle-link' : 'needle-link-alt';
+    
+      navLinksA.forEach((navLinkA) => {
+        navLinkA.className = newClassName;
+    
+        const navSpan = navLinkA.querySelector('.needle');
+        if (!navSpan) {
+          const newNavSpan = document.createElement('span');
+          newNavSpan.className = 'needle';
+          newNavSpan.innerHTML = '&#129697;';
+          navLinkA.appendChild(newNavSpan);
+        }
+      });
+    }
+    
+    updateNavLinksClass();
+    
+    // Update the class whenever the window is resized
+    window.addEventListener('resize', updateNavLinksClass);
 
     /////////////// Swipe Menu ///////////////
     navSlide = () => {

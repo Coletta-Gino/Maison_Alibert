@@ -2,7 +2,7 @@
 // Fonts + Font Awesome 4.7.0 Icons
 $fa-font-path: '~font-awesome/fonts';
 $font-family-title: 'balgor-regular', serif;
-$font-family-content: 'bodoni-72-smallcaps', serif; // TOUJOURS EN MAJUSCULES !
+$font-family-content: 'bodoni-72-smallcaps', serif; // ALWAYS IN MAJ !
 $font-family-alt: 'bodoni-72-book', sans-serif;
 
 // Colors
@@ -11,6 +11,9 @@ $alabaster: hsl(34, 32%, 91%); // or rgb(240, 234, 226), or #f0eae2
 $nickel: hsl(0, 0%, 45%); // or rgb(115, 115, 115), or #737373
 $chinese-black: hsl(214, 32%, 9%); // or rgb(15, 21, 29), or #0f151d
 $ruddy-pink: hsl(8, 58%, 73%); // or rgb(226, 158, 147), or #e29e93
+
+// Transform 
+$translate-rotate: translateY(-2px) rotateX(5deg);
 
 // Shadow
 // $box-shadow-circle: inset -3px -3px 7px 2.5px rgba($cream-coffee, 0.1);

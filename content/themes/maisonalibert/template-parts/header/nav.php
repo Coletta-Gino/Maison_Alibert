@@ -21,8 +21,6 @@
         <img src="<?php echo $image_attributes[0]; ?>" alt="<?php echo $alt_text; ?>" />
       </a>
     </div>
-
-    <!-- <div class="triangle top-left"></div> -->
   
     <!-- Menu Items -->
     <?php 
@@ -44,6 +42,4 @@
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>
-
-    <!-- <div class="triangle bottom-right"></div> -->
   </nav>

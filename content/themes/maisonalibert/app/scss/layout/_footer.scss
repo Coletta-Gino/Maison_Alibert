@@ -11,16 +11,10 @@ footer {
   padding: 1em 1em 0.5em;
   z-index: 5;
 
-  // STITCHING EFFECT
-  // padding: 20px;
-  // margin: 10px;
-  // background: #ff0030;
-  // color: #fff;
-  // line-height: 1.3em;
+  // Stitching effect
   border-top: 2px dashed $alabaster;
   border-radius: 25px 25px 0 0;
   box-shadow: 0 0 0 6px $blue-sapphire, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
-  // text-shadow: -1px -1px #aa3030;
 }
   
 // Tablet

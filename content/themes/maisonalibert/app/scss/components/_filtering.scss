@@ -10,11 +10,7 @@ main {
     .filter {
       button {
         color: $chinese-black;
-        background-color: $alabaster;
-        box-shadow: inset -10px -10px 20px #c0bbb5,
-                    inset 10px 10px 20px #ffffff,
-                    2px 2px 4px #ccc7c0,
-                    -2px -2px 4px #ffffff;
+        @include external-shadow;
         text-transform: capitalize;
         padding: 10px 20px;
         margin: 0 0.5em 1em;
@@ -27,12 +23,7 @@ main {
 
         &:hover,
         &.selected {
-          box-shadow: inset 10px 10px 20px #c0bbb5,
-                      inset -10px -10px 20px #ffffff,
-                      -2px -2px 4px #ccc7c0,
-                      2px 2px 4px #ffffff;
-          transition: 0.5s;
-          transform: translateY(-2px) rotateX(5deg);
+          @include shadow-on-hover;
         }
       }
     }

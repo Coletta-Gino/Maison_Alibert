@@ -6,6 +6,7 @@ main {
       flex-direction: column;
       justify-content: space-between; 
       align-items: center;
+      margin-top: 1.5em;
 
       .total-reviews-average {
         display: flex; 
@@ -79,37 +80,35 @@ main {
                 appearance: none;
   
                 // Dimensions
-                width: 225px;
+                width: 200px;
                 height: 15px;
   
                 // Get rid of default border in Firefox
                 border: none;
   
                 // Base
-                background-color: #eee;
+                @include internal-shadow;
                 border-radius: 15px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  
+
                 // For IE10
                 color: $ruddy-pink;
               }
   
               progress::-moz-progress-bar {
                 background: $ruddy-pink;
-                border-radius: 15px 0 0 15px; 
+                border-radius: 15px; 
               }
   
               // Style the container
               progress[value]::-webkit-progress-bar {
-                background-color: #eee;
+                @include internal-shadow;
                 border-radius: 15px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
               }
   
               // Style the bar
               progress[value]::-webkit-progress-value {
                 background-color: $ruddy-pink;
-                border-radius: 15px 0 0 15px; 
+                border-radius: 15px; 
               }
             }
 
@@ -134,7 +133,7 @@ main {
 
     .comment__list {
       list-style: none;
-      margin-top: 5em;
+      margin-top: 3em;
 
       .comment {
         &.bypostauthor {
@@ -149,12 +148,8 @@ main {
           display: flex;
           flex-direction: column;
           color: $chinese-black;
-          background-color: $alabaster;
-          box-shadow: inset 5px 5px 10px #c0bbb5,
-                      inset -5px -5px 10px #ffffff,
-                      -1px -1px 2px #ccc7c0,
-                      1px 1px 2px #ffffff;
-          transform: translateY(-2px) rotateX(5deg);
+          @include internal-shadow;
+          transform: $translate-rotate;
           // padding: 10px 20px;
           padding: 1em;
           margin: 0.5em 0 1.5em;
@@ -271,18 +266,14 @@ main {
 
             input {
               width: 100%;
-              height: 6vh;
               color: $chinese-black;
-              background-color: $alabaster;
-              box-shadow: inset 5px 5px 10px #c0bbb5,
-                          inset -5px -5px 10px #ffffff,
-                          -1px -1px 2px #ccc7c0,
-                          1px 1px 2px #ffffff;
-              transform: translateY(-2px) rotateX(5deg);
-              padding: 1em;
+              @include internal-shadow;
+              transform: $translate-rotate;
+              padding: 0.5em;
               border-radius: 7px;
               border: none;
               outline: none;
+              cursor: text;
             }
           }
   
@@ -295,18 +286,14 @@ main {
 
             input {
               width: 100%;
-              height: 6vh;
               color: $chinese-black;
-              background-color: $alabaster;
-              box-shadow: inset 5px 5px 10px #c0bbb5,
-                          inset -5px -5px 10px #ffffff,
-                          -1px -1px 2px #ccc7c0,
-                          1px 1px 2px #ffffff;
-              transform: translateY(-2px) rotateX(5deg);
-              padding: 1em;
+              @include internal-shadow;
+              transform: $translate-rotate;
+              padding: 0.5em;
               border-radius: 7px;
               border: none;
               outline: none;
+              cursor: text;
             }
           }
 
@@ -360,17 +347,14 @@ main {
               width: 100%;
               height: 20vh;
               color: $chinese-black;
-              background-color: $alabaster;
-              box-shadow: inset 5px 5px 10px #c0bbb5,
-                          inset -5px -5px 10px #ffffff,
-                          -1px -1px 2px #ccc7c0,
-                          1px 1px 2px #ffffff;
-              transform: translateY(-2px) rotateX(5deg);
-              padding: 1em;
+              @include internal-shadow;
+              transform: $translate-rotate;
+              padding: 0.5em;
               border-radius: 7px;
               border: none;
               outline: none;
               resize: none;
+              cursor: text;
             }
           }
   
@@ -388,10 +372,10 @@ main {
   main {
     .comments-area {
       &__summary {
-        flex-direction: row;
+        margin-top: 2.25em;
 
         .total-reviews-average {
-          width: 25%;
+          width: 50%;
 
           // .stars {
           //   margin: 1em 0;
@@ -403,12 +387,12 @@ main {
         }
   
         .add-review {
-          width: 25%;
+          width: 50%;
         }
       }
   
       .comment__list {
-        margin-top: 1.5em;
+        margin-top: 4.5em;
   
         .comment {
           .comment-body {
@@ -467,8 +451,7 @@ main {
               }
   
               input {
-                height: 6.5vh;
-                padding: 1.5em;
+                padding: 1em;
                 border-radius: 7.5px;
               }
             }
@@ -479,8 +462,7 @@ main {
               }
   
               input {
-                height: 6.5vh;
-                padding: 1.5em;
+                padding: 1em;
                 border-radius: 7.5px;
               }
             }
@@ -503,7 +485,7 @@ main {
               }
   
               textarea {
-                padding: 1.5em;
+                padding: 1em;
                 border-radius: 7.5px;
               }
             }
@@ -519,6 +501,9 @@ main {
   main {
     .comments-area {
       &__summary {
+        flex-direction: row;
+        margin-top: 1.5em;
+
         .total-reviews-average {
           width: 30%;
 
@@ -528,7 +513,7 @@ main {
         }
   
         .reviews-details {
-          width: 30%;
+          width: 35%;
 
           &__5,
           &__4,
@@ -540,7 +525,7 @@ main {
 
               &:nth-child(2) {
                 progress[value] {
-                  width: 300px;
+                  width: 350px;
                   height: 20px;
                 }
               }
@@ -554,7 +539,7 @@ main {
       }
   
       .comment__list {
-        // margin-top: 1.5em;
+        margin-top: 3em;
   
         .comment {
           .comment-body {
@@ -612,8 +597,7 @@ main {
               }
   
               input {
-                height: 7vh;
-                padding: 2em;
+                padding: 1.5em;
                 border-radius: 8px;
               }
             }
@@ -624,8 +608,7 @@ main {
               }
   
               input {
-                height: 7vh;
-                padding: 2em;
+                padding: 1.5em;
                 border-radius: 8px;
               }
             }
@@ -648,7 +631,7 @@ main {
               }
   
               textarea {
-                padding: 2em;
+                padding: 1.5em;
                 border-radius: 8px;
               }
             }

@@ -13,8 +13,39 @@ footer {
     }
 
     li {
-      margin: 0.25em 0.25em 0;
+      margin: 0.5em 0.5em 0;
       list-style: none;
+
+      div {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset -10px -10px 20px #174e56,
+                    inset 10px 10px 20px #237482,
+                    2px 2px 4px #174e56,
+                    -2px -2px 4px #237482;
+        padding: 7.5px 15px;
+        border-radius: 8.5px;
+        cursor: pointer;
+        transition: 0.5s;
+        will-change: box-shadow, transform;
+  
+        &:hover {
+          box-shadow: inset 10px 10px 20px #174e56,
+                      inset -10px -10px 20px #237482,
+                      -2px -2px 4px #174e56,
+                      2px 2px 4px #237482;
+          transition: 0.5s;
+          transform: translateY(-2px) rotateX(5deg);
+        }
+
+        a {
+          color: $alabaster;
+          font-size: 20px;
+        }
+      }
     }
   }
 }
@@ -26,7 +57,17 @@ footer {
       margin: 1em 0;
   
       li {
-        margin: 0.5em 0.5em 0;
+        margin: 0.75em 0.75em 0;
+
+        div {
+          width: 45px;
+          height: 45px;
+          border-radius: 9px;
+  
+          a {
+            font-size: 25px;
+          }
+        }
       }
     }
   }
@@ -39,58 +80,15 @@ footer {
       margin: 1.25em 0;
   
       li {
-        width: 50px;
-        height: 50px;
-        /* margin: 0 5.5px 11px 5.5px; */
-        border-radius: 8px;
-        // background-color: $alabaster;
-        background-color: $blue-sapphire;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        margin: 0.75em 0.75em 0;
+        margin: 1em 1em 0;
 
         div {
-          width: 35px;
-          height: 35px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          // background-color: $alabaster;
-          // box-shadow: inset -10px -10px 20px #c0bbb5, 
-          //             inset 10px 10px 20px #ffffff, 
-          //             2px 2px 4px #ccc7c0, 
-          //             -2px -2px 4px #ffffff;
-          background-color: $blue-sapphire;
-          box-shadow: inset -10px -10px 20px #174e56,
-                      inset 10px 10px 20px #237482,
-                      2px 2px 4px #174e56,
-                      -2px -2px 4px #237482;
-
-          padding: 7.5px 15px;
-          /* margin: 1em auto 3em; */
-          border-radius: 5px;
-          cursor: pointer;
-          transition: 0.5s;
-          will-change: box-shadow, transform;
-    
-          &:hover {
-            // box-shadow: inset 10px 10px 20px #c0bbb5,
-            //             inset -10px -10px 20px #ffffff,
-            //             -2px -2px 4px #ccc7c0,
-            //             2px 2px 4px #ffffff;
-            box-shadow: inset 10px 10px 20px #174e56,
-                        inset -10px -10px 20px #237482,
-                        -2px -2px 4px #174e56,
-                        2px 2px 4px #237482;
-            transition: 0.5s;
-            transform: translateY(-2px) rotateX(5deg);
-          }
-
+          width: 50px;
+          height: 50px;
+          border-radius: 9.5px;
+  
           a {
-            color: $alabaster;
-            font-size: 1.5em;
+            font-size: 30px;
           }
         }
       }
