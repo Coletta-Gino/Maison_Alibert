@@ -8,8 +8,7 @@ footer {
     p {
       margin: 0;
       color: $alabaster;
-      // color: $chinese-black;
-      // -webkit-text-stroke: 0.25px $alabaster;
+      font-size: 0.75em; // 12px;
     }
   }
 }
@@ -28,6 +27,10 @@ footer {
   footer {
     .copyright {
       margin-top: 0;
+
+      p {
+        font-size: 1em; // 16px;
+      }
     }
   }
 }

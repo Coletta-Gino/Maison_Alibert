@@ -29,7 +29,7 @@ footer {
         padding: 7.5px 15px;
         border-radius: 8.5px;
         cursor: pointer;
-        transition: 0.5s;
+        transition: $transition-medium;
         will-change: box-shadow, transform;
   
         &:hover {
@@ -37,13 +37,13 @@ footer {
                       inset -10px -10px 20px #237482,
                       -2px -2px 4px #174e56,
                       2px 2px 4px #237482;
-          transition: 0.5s;
+          transition: $transition-medium;
           transform: translateY(-2px) rotateX(5deg);
         }
 
         a {
           color: $alabaster;
-          font-size: 20px;
+          font-size: 1.25em; // 20px
         }
       }
     }
@@ -65,7 +65,7 @@ footer {
           border-radius: 9px;
   
           a {
-            font-size: 25px;
+            font-size: 1.5625em; // 25px
           }
         }
       }
@@ -88,7 +88,7 @@ footer {
           border-radius: 9.5px;
   
           a {
-            font-size: 30px;
+            font-size: 1.875em; // 30px
           }
         }
       }

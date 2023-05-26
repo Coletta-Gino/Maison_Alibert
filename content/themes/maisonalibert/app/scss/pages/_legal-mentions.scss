@@ -1,0 +1,40 @@
+//////////////// LEGAL MENTIONS ////////////////
+main {
+  .legal-mentions {
+    h2 {
+      margin-top: 1.5em;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 1.0625em; // 17px;
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: $breakpoint-small) {
+  main {
+    .legal-mentions {
+      h2 {
+        margin-top: 2.25em;
+       }
+    }
+  }
+}
+  
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .legal-mentions {
+      h2 {
+        text-align: left;
+        margin-top: 1.5em;
+      }
+          
+      p {
+        font-size: 1.25em; // 20px
+      }
+    }
+  }
+}

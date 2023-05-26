@@ -2,8 +2,8 @@
 // Fonts + Font Awesome 4.7.0 Icons
 $fa-font-path: '~font-awesome/fonts';
 $font-family-title: 'balgor-regular', serif;
-$font-family-content: 'bodoni-72-smallcaps', serif; // ALWAYS IN MAJ !
-$font-family-alt: 'bodoni-72-book', sans-serif;
+$font-family-content: 'bodoni-72-book', sans-serif;
+$font-family-alt: 'bodoni-72-smallcaps', serif; // ALWAYS IN MAJ !
 
 // Colors
 $blue-sapphire: hsl(188, 58%, 27%); // or rgb(29, 97, 108), or #1d616c
@@ -15,33 +15,9 @@ $ruddy-pink: hsl(8, 58%, 73%); // or rgb(226, 158, 147), or #e29e93
 // Transform 
 $translate-rotate: translateY(-2px) rotateX(5deg);
 
-// Shadow
-// $box-shadow-circle: inset -3px -3px 7px 2.5px rgba($cream-coffee, 0.1);
-// $box-shadow-product: 1.5px 2.5px 2.5px 5.5px rgba($black, 0.15);
-
 // Transitions Durations
 $transition-medium: 0.5s;
 $transition-slow: 0.7s;
-
-// Borders
-// $border: 1px solid rgba($white, 0.4);
-// $border-right-bottom: 1px solid rgba($white, 0.2);
-
-// Glassmorphism Style
-// $glass: rgba($white, 0.05);
-
-// Hover Effects
-// $glass-hover: skewX(45deg) translateX(-150px);
-$size-hover: 100% 100%;
-
-// Mobile
-// $translateY-mobile: translateY(-10px);
-
-// Tablet
-// $translateY-tablet: translateY(-15px);
-
-// Desktop
-// $translateY-desktop: translateY(-20px);
 
 // Breakpoints
 $breakpoint-small: 768px;

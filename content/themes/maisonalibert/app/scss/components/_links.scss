@@ -5,6 +5,7 @@ footer {
 
     li {
       list-style: none;
+      font-size: 1.0625em; // 17px;
     }
   }
 }
@@ -23,6 +24,10 @@ footer {
   footer {
     .links {
       margin: 1.25em 0;
+
+      li {
+        font-size: 1.25em; // 20px
+      }
     }
   }
 }

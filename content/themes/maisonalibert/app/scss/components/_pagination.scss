@@ -10,15 +10,16 @@ main {
 
       li {
         list-style: none;
-        @include external-shadow;
+        @include neumorphism;
         padding: 7.5px 15px;
         margin: 0 0.25em 0.5em;
         border-radius: 15px;
         border: none;
         outline: none;
         cursor: pointer;
-        transition: 0.5s;
+        transition: $transition-medium;
         will-change: box-shadow, transform;
+        font-size: 1.0625em; // 17px;
 
         a {
           color: $chinese-black;
@@ -49,14 +50,15 @@ main {
 }
     
 // Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   main {
-//     .pagination {
-//       .page-numbers {
-//         li {
-//           margin: 0 0.75em 1em;
-//         }
-//       }
-//     }
-//   }
-// }
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .pagination {
+      .page-numbers {
+        li {
+          // margin: 0 0.75em 1em;
+          font-size: 1.25em; // 20px
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@ main {
   
           p {
             margin: 0 0 0.5em;
+            font-size: 1.0625em; // 17px;
           }
   
           .colors-available {
@@ -40,6 +41,7 @@ main {
           word-wrap: break-word;
           text-align: justify;
           margin: 1.5em 0;
+          font-size: 1.0625em; // 17px;
         }
 
         .price {
@@ -49,6 +51,7 @@ main {
           p {
             color: $nickel;
             margin: 0;
+            font-size: 1.1875em; // 19px;
           }
         }
       }
@@ -129,6 +132,7 @@ main {
     
             p {
               margin: 0 0 1em;
+              font-size: 1.25em; // 20px
             }
     
             .colors-available {
@@ -143,10 +147,15 @@ main {
 
           .description {
             margin: 2em 0;
+            font-size: 1.25em; // 20px
           }
 
           .price {
             margin: 2em 0 0;
+
+            p {
+              font-size: 1.4375em; // 23px;
+            }
           }
         }
       }

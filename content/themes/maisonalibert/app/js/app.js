@@ -2,11 +2,36 @@ var app = {
   init: function() {
     console.log('init');
 
+    /////////////// Get The Current Year To Automatically Change It In The Copyright ///////////////
+    document.getElementById('year').innerHTML = new Date().getFullYear();
+
     /////////////// Sticky Nav ///////////////
     window.addEventListener('scroll', () => {
       var navigation = document.querySelector("nav");
       navigation.classList.toggle('sticky', window.scrollY > 0);
     });
+
+    /////////////// Scroll To Top Anchor ///////////////
+    const scrollTop = document.getElementById('scrolltop');
+
+    // When the page is loaded, hide the scroll-to-top button
+    window.onload = () => {
+      scrollTop.style.visibility = "hidden";
+      scrollTop.style.opacity = 0;
+    }
+
+    // If the page is scrolled more than 200px (for example), show the scroll-to-top button
+    // Otherwise hide the button
+    window.onscroll = () => {
+      if (window.scrollY > 100) {
+        scrollTop.style.visibility = "visible";
+        scrollTop.style.opacity = 1;
+      } 
+      else {
+        scrollTop.style.visibility = "hidden";
+        scrollTop.style.opacity = 0;
+      }
+    };
 
     /////////////// Add Classname And <span> To <a> In The Nav ///////////////
     const navLinksA = document.querySelectorAll('.menu-item a');
@@ -182,9 +207,6 @@ var app = {
       // Replace the <cite> element's content with just the text
       citeElement.innerHTML = text;
     }
-
-    /////////////// Get The Current Year To Automatically Change It In The Copyright ///////////////
-    document.querySelector('.copyright p span').innerHTML = new Date().getFullYear();
   }
 };
 

@@ -20,18 +20,42 @@
 
       <div class="skills__icon">
         <div>
-          <i class="fa <?php the_field('icon_1');?>" aria-hidden="true"></i>
-          <span><?php the_field('name_1');?></span>
+          <?php
+            $image_1 = get_field('picture_1');
+            
+            if ($image_1) {
+              $alt_1 = $image_1['alt'];
+              echo '<img src="' . $image_1['url'] . '" alt="' . $alt_1 . '">';
+            }
+          ?>
+
+          <span><?php the_field('name_1'); ?></span>
         </div>
 
         <div>
-          <i class="fa <?php the_field('icon_2');?>" aria-hidden="true"></i>
-          <span><?php the_field('name_2');?></span>
+          <?php
+            $image_2 = get_field('picture_2');
+
+            if ($image_2) {
+              $alt_2 = $image_2['alt'];
+              echo '<img src="' . $image_2['url'] . '" alt="' . $alt_2 . '">';
+            }
+          ?>
+
+          <span><?php the_field('name_2'); ?></span>
         </div>
 
         <div>
-          <i class="fa <?php the_field('icon_3');?>" aria-hidden="true"></i>
-          <span><?php the_field('name_3');?></span>
+          <?php
+            $image_3 = get_field('picture_3');
+
+            if ($image_3) {
+              $alt_3 = $image_3['alt'];
+              echo '<img src="' . $image_3['url'] . '" alt="' . $alt_3 . '">';
+            }
+          ?>
+          
+          <span><?php the_field('name_3'); ?></span>
         </div>
       </div>
 

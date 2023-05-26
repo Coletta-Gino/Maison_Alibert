@@ -16,13 +16,11 @@ main {
       justify-content: start;
       align-items: center;
       color: $nickel;
-      @include external-shadow;
+      @include neumorphism;
       padding: 1em;
       margin-bottom: 1.5em;
       border-radius: 25px;
       overflow: hidden;
-      @include triangles;
-      @include triangles-appear;
 
       // &__content {
 
@@ -30,15 +28,18 @@ main {
 
       &__date {
         text-align: center;
+        font-size: 1.1875em; // 19px;
       }
 
       &__location {
         text-align: center;
+        font-size: 1.0625em; // 17px;
       }
 
       &__price {
         p {
           color: $nickel;
+          font-size: 1.0625em; // 17px;
         }
       }
     }
@@ -92,20 +93,28 @@ main {
         min-height: 40vh;
         padding: 2em;
         margin-bottom: 5em;
+        @include triangles;
+        @include triangles-appear;
 
         &__date {
+          font-size: 1.4375em; // 23px;
+
           p {
             margin: 1.5em 0;
           }
         }
   
         &__location {
+          font-size: 1.25em; // 20px
+
           p {
             margin: 1.5em 0;
           }
         }
   
         &__price {
+          font-size: 1.25em; // 20px
+          
           p {
             margin: 1.5em 0;
           }

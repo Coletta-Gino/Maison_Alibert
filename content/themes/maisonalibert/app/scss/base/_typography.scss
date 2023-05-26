@@ -19,6 +19,10 @@
 //   font-style: normal;
 // }
 
+.wrapper {
+  font-family: $font-family-content;
+}
+
 h1,
 h2,
 h3,
@@ -26,18 +30,62 @@ h4,
 h5,
 h6 {
   font-family: $font-family-title;
-  // font-family: $font-family-content;
-  // font-family: $font-family-alt;
 }
 
 p {
-  // font-family: $font-family-title;
-  // font-family: $font-family-content;
-  font-family: $font-family-alt;
+  font-family: $font-family-content;
 }
 
 a {
-  // font-family: $font-family-title;
-  // font-family: $font-family-content;
-  font-family: $font-family-alt;
+  font-family: $font-family-content;
+}
+
+.skills {
+  &__icon {
+    span {
+      font-family: $font-family-alt;
+    }
+  }
+}
+
+.options {
+  .filter {
+    button {
+      font-family: $font-family-alt;
+    }
+  }
+
+  .sort {
+    div {
+      &:first-child {
+        p {
+          font-family: $font-family-alt;
+        }
+      }
+
+      &.dropdown {
+        a {
+          font-family: $font-family-alt;
+        }
+      }
+    }
+  }
+}
+
+.comments-area {
+  .comment-respond {
+    .comment-form {
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        font-family: $font-family-content;
+      }
+
+      .form-submit {
+        input[type="submit"] {
+          font-family: $font-family-alt;
+        }
+      }
+    }
+  }
 }

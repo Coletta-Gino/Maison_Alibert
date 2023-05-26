@@ -2,22 +2,20 @@
 main {
   .options {
     .sort {
-      color: $chinese-black;
-      @include external-shadow;
-      padding: 10px 20px;
-      margin: 0 0.5em;
-      border-radius: 15px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      transition: 0.5s;
-      will-change: box-shadow, transform;
+      margin: 0 0.5em !important;
+      @include button-input-style;
 
       div {
         &:first-child {
           display: flex;
           justify-content: space-around;
           align-items: center;
+
+          div {
+            font-size: 0.875em; // 14px
+            font-weight: 500;
+            letter-spacing: 1.25px;
+          }
         }
 
         &.btn {
@@ -43,12 +41,14 @@ main {
             padding: 10px 20px;
             margin: 0.25em 0.5em 0.75em;
             text-decoration: none;
+            font-size: 0.875em; // 14px
             color: $chinese-black;
             border-radius: 7px;
+            letter-spacing: 1.25px;
             border: none;
             outline: none;
             cursor: pointer;
-            transition: 0.5s;
+            transition: $transition-medium;
             will-change: box-shadow, transform;
             
             &:hover {
@@ -98,10 +98,17 @@ main {
         padding: 15px 30px;
 
         div {
+          &:first-child {
+            div {
+              font-size: 1.0625em; // 17px;
+            }
+          }
+
           &.dropdown {
             a {
               padding: 15px 30px;
               margin: 0.75em 0 1.25em;
+              font-size: 1.0625em; // 17px;
               border-radius: 8px;
             }
           }

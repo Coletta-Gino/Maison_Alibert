@@ -22,6 +22,7 @@ main {
     &__cta {
       text-align: center;
       margin: 0 0 0.5em;
+      font-size: 1.0625em; // 17px;
     }
   }
 }
@@ -63,6 +64,7 @@ main {
 
       &__cta {
         margin: -3em 0 1em;
+        font-size: 1.25em; // 20px
       }
     }
   }

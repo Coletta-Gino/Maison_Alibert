@@ -1,14 +1,12 @@
 //////////////// Intro ////////////////
 main {
   .intro {
-    @include triangles;
-    @include triangles-appear;
-    
     &__content {
       margin: 1.5em 0;
 
       p {
         text-align: center;
+        font-size: 1.0625em; // 17px;
       }
     }
 
@@ -56,11 +54,17 @@ main {
       flex-wrap: wrap;
       justify-content: space-evenly;
       align-items: center;
+      @include triangles;
+      @include triangles-appear;
 
       &__content {
         width: 60%;
         // margin: 2em 0;
         margin: unset;
+
+        p {
+          font-size: 1.25em; // 20px
+        }
       }
 
       &__picture {

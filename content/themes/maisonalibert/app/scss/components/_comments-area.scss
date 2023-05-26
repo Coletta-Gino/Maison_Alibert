@@ -22,6 +22,7 @@ main {
 
         .stars {
           // margin: 1em 0;
+          font-size: 1.1875em; // 19px;
 
           i {
             color: $ruddy-pink;
@@ -54,6 +55,7 @@ main {
           display: flex;
           justify-content: space-evenly;
           align-items: center;
+          font-size: 1.0625em; // 17px;
 
           .column {
             margin: 0.25em 0;
@@ -128,6 +130,10 @@ main {
         h3 {
           color: $chinese-black;
         }
+
+        a {
+          font-size: 1.0625em; // 17px;
+        }
       }
     }
 
@@ -180,6 +186,11 @@ main {
 
             .fn {
               margin-right: 0.5em;
+              font-size: 1.0625em; // 17px;
+            }
+
+            span {
+              font-size: 1.0625em; // 17px;
             }
           }
 
@@ -190,12 +201,14 @@ main {
 
             em {
               color: $nickel;
+              font-size: 0.875em; // 14px
             }
           }
 
           .comment-rating {
             order: 3;
             margin: 0.25em 0;
+            font-size: 1.1875em; // 19px;
 
             i {
               // color: #fd4;
@@ -206,11 +219,13 @@ main {
           p {
             order: 4;
             margin: 0.25em 0;
+            font-size: 1.0625em; // 17px;
           }
 
           .reply {
             order: 5;
             margin-top: 0.75em;
+            font-size: 1.0625em; // 17px;
           }
         }
 
@@ -226,6 +241,12 @@ main {
           h3 {
             small {
               margin-left: 0.5em;
+              text-transform: initial;
+              font-size: initial;
+
+              #cancel-comment-reply-link {
+                font-size: 1.0625em; // 17px;
+              }
             }
           }
 
@@ -255,10 +276,12 @@ main {
           &.comment-notes {
             color: $nickel;
             font-style: italic;
+            font-size: 0.875em; // 14px
           }
   
           &.comment-form-author {
             order: 1;
+            font-size: 1.0625em; // 17px;
 
             label {
               margin-bottom: 0.5em;
@@ -269,16 +292,18 @@ main {
               color: $chinese-black;
               @include internal-shadow;
               transform: $translate-rotate;
-              padding: 0.5em;
+              padding: 0.25em;
               border-radius: 7px;
               border: none;
               outline: none;
               cursor: text;
+              font-size: 1.0625em; // 17px;
             }
           }
   
           &.comment-form-email {
             order: 2;
+            font-size: 1.0625em; // 17px;
 
             label {
               margin-bottom: 0.5em;
@@ -289,11 +314,12 @@ main {
               color: $chinese-black;
               @include internal-shadow;
               transform: $translate-rotate;
-              padding: 0.5em;
+              padding: 0.25em;
               border-radius: 7px;
               border: none;
               outline: none;
               cursor: text;
+              font-size: 1.0625em; // 17px;
             }
           }
 
@@ -303,6 +329,7 @@ main {
             label {
               width: 100%;
               margin-bottom: 0.5em;
+              font-size: 1.0625em; // 17px;
             }
   
             .commentratingbox {
@@ -338,6 +365,7 @@ main {
   
           &.comment-form-comment {
             order: 4;
+            font-size: 1.0625em; // 17px;
 
             label {
               margin-bottom: 0.5em;
@@ -349,17 +377,29 @@ main {
               color: $chinese-black;
               @include internal-shadow;
               transform: $translate-rotate;
-              padding: 0.5em;
+              padding: 0.25em;
               border-radius: 7px;
               border: none;
               outline: none;
               resize: none;
               cursor: text;
+              font-size: 1.0625em; // 17px;
             }
           }
   
           &.form-submit {
             order: 5;
+
+            input {
+              @include button-input-style;
+              font-size: 0.875em; // 14px
+              font-weight: 500;
+              letter-spacing: 1.25px;
+            
+              &:hover {
+                @include shadow-on-hover;
+              }
+            }
           }
         }
       }
@@ -383,7 +423,7 @@ main {
         }
   
         .reviews-details {
-          width: 45%;
+          width: 55%;
         }
   
         .add-review {
@@ -451,7 +491,7 @@ main {
               }
   
               input {
-                padding: 1em;
+                padding: 0.5em;
                 border-radius: 7.5px;
               }
             }
@@ -462,7 +502,7 @@ main {
               }
   
               input {
-                padding: 1em;
+                padding: 0.5em;
                 border-radius: 7.5px;
               }
             }
@@ -485,8 +525,14 @@ main {
               }
   
               textarea {
-                padding: 1em;
+                padding: 0.5em;
                 border-radius: 7.5px;
+              }
+            }
+
+            &.form-submit {
+              input {
+                padding: 12.5px 25px;
               }
             }
           }
@@ -507,9 +553,10 @@ main {
         .total-reviews-average {
           width: 30%;
 
-          // .stars {
-          //   margin: 1em 0;
-          // }
+          .stars {
+            // margin: 1em 0;
+            font-size: 1.4375em; // 23px;
+          }
         }
   
         .reviews-details {
@@ -520,6 +567,8 @@ main {
           &__3,
           &__2, 
           &__1 {
+            font-size: 1.25em; // 20px
+
             .column {
               margin: 0.5em 0;
 
@@ -535,6 +584,10 @@ main {
   
         .add-review {
           width: 30%;
+
+          a {
+            font-size: 1.25em; // 20px
+          }
         }
       }
   
@@ -556,27 +609,50 @@ main {
                 // margin-right: 0.25em;
                 border-radius: 9px;
               }
+
+              .fn {
+                font-size: 1.25em; // 20px
+              }
+  
+              span {
+                font-size: 1.25em; // 20px
+              }
             }
   
             .comment-meta {
               margin-bottom: 1.25em;
+
+              em {
+                font-size: 1.0625em; // 17px;
+              }
             }
   
             .comment-rating {
               margin: 0.75em 0;
+              font-size: 1.4375em; // 23px;
             }
   
             p {
               margin: 0.75em 0;
+              font-size: 1.25em; // 20px
             }
   
             .reply {
               margin-top: 1.25em;
+              font-size: 1.25em; // 20px
             }
           }
 
           .comment-respond {
             width: 45%;
+
+            h3 {
+              small {
+                #cancel-comment-reply-link {
+                  font-size: 1.25em !important; // 20px
+                }
+              }
+            }
           }
         }
       }
@@ -589,33 +665,41 @@ main {
             &.comment-notes {
               display: flex;
               flex-wrap: wrap;
+              font-size: 1.0625em; // 17px;
             }
     
             &.comment-form-author {
+              font-size: 1.25em; // 20px
+
               label {
                 margin-bottom: 1em;
               }
   
               input {
-                padding: 1.5em;
+                padding: 0.75em;
                 border-radius: 8px;
+                font-size: 20px !important; // 20px
               }
             }
     
             &.comment-form-email {
+              font-size: 1.25em; // 20px
+
               label {
                 margin-bottom: 1em;
               }
   
               input {
-                padding: 1.5em;
+                padding: 0.75em;
                 border-radius: 8px;
+                font-size: 20px !important; // 20px
               }
             }
   
             &.comment-form-rating {
               label {
                 margin-bottom: 1em;
+                font-size: 1.25em; // 20px
               }
     
               .commentratingbox {
@@ -626,13 +710,23 @@ main {
             }
     
             &.comment-form-comment {
+              font-size: 1.25em; // 20px
+
               label {
                 margin-bottom: 1em;
               }
   
               textarea {
-                padding: 1.5em;
+                padding: 0.75em;
                 border-radius: 8px;
+                font-size: 20px !important; // 20px
+              }
+            }
+
+            &.form-submit {
+              input {
+                padding: 15px 30px;
+                font-size: 1.0625em; // 17px;
               }
             }
           }

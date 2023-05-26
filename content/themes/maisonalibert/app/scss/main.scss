@@ -25,6 +25,7 @@
 
 // 5. Components
 @import
+  'components/anchor',
   'components/best-sellers',
   'components/comments-area',
   'components/contact',
@@ -44,6 +45,6 @@
 
 // 6. Pages
 @import
-  'pages/errors';
-//   'pages/legal-mentions',
-//   'pages/results';
+  'pages/errors',
+  'pages/legal-mentions';
+  // 'pages/results';

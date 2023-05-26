@@ -8,7 +8,7 @@
 
 <body>
   <!-- Wrapper -->
-  <div class="wrapper">
+  <div class="wrapper" id="top">
 
     <!-- Header -->
     <?php 

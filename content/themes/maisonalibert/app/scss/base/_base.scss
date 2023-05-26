@@ -9,28 +9,37 @@ body {
   overflow-x: hidden;
 }
 
+// .wrapper {
+//   font-size: 1.0625em; // 17px;
+// }
+
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   width: 100%;
   text-align: center;
+  text-transform: capitalize;
   color: $ruddy-pink;
-  // text-shadow: 3px 3px 2px rgba(240, 234, 226, 0.5);
   z-index: 5;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em; // 32px
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.8125em; // 29px
 }
 
 h3 {
-  color: $ruddy-pink;
-  // font-size: 1.5em;
+  font-size: 1.625em; // 26px
+}
+
+h4 {
+  font-size: 1.4375em; // 23px
 }
 
 p {
@@ -42,12 +51,17 @@ p {
   color: $ruddy-pink;
 }
 
+.wpcp-carousel-section .swiper-button-prev, 
+.wpcp-carousel-section .swiper-button-next {
+  z-index: 1 !important;
+}
+
 //////////////// SECTION ////////////////
 section {
   position: relative;
   width: 90%;
   // color: $nickel;
-  @include external-shadow;
+  @include neumorphism;
   padding: 1em;
   margin: 1em auto 3em;
   border-radius: 25px;
@@ -101,7 +115,7 @@ a {
       margin-left: 0;
       transform-origin: left bottom;
       transform: scaleX(0);
-      transition: transform 0.5s ease-out, width 0.5s ease-out;
+      transition: transform $transition-medium ease-out, width $transition-medium ease-out;
     }
   }
 
@@ -149,27 +163,8 @@ a {
       margin-left: 0;
       transform-origin: left bottom;
       transform: scaleX(0);
-      transition: transform 0.5s ease-out, width 0.5s ease-out;
+      transition: transform $transition-medium ease-out, width $transition-medium ease-out;
     }
-  }
-}
-
-//////////////// INPUTS/BUTTONS ////////////////
-input {
-  color: $chinese-black;
-  @include external-shadow;
-  // text-transform: capitalize;
-  padding: 10px 20px;
-  margin: 0 0.5em 1em;
-  border-radius: 15px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: 0.5s;
-  will-change: box-shadow, transform;
-
-  &:hover {
-    @include shadow-on-hover;
   }
 }
     
@@ -179,77 +174,51 @@ input {
     width: 85%;
     padding: 1.5em;
   }
-
-  //////////////// INPUTS/BUTTONS ////////////////
-  input {
-    padding: 12.5px 25px;
-  }
 }
     
 // Desktop
 @media screen and (min-width: $breakpoint-medium) {
+  // .wrapper {
+  //   font-size: 1.25em; // 20px
+  // }
+
+  h1 {
+    font-size: 2.625em; // 42px
+  }
+  
+  h2 {
+    font-size: 2.4375em; // 39px
+  }
+  
+  h3 {
+    font-size: 2.25em; // 36px
+  }
+  
+  h4 {
+    font-size: 2.0625em; // 33px
+  }
+
   section {
     width: 80%;
     padding: 2em;
     margin: 1em auto 3em;
   }
 
-  //////////////// INPUTS/BUTTONS ////////////////
-  input {
-    padding: 15px 30px;
+  // Zoom effect on carousels
+  .wpcp-slide-image {
+    overflow: hidden;
+    cursor: zoom-in;
+  
+    img {
+      object-fit: cover;
+      transition: transform 0.8s;
+      // cursor: pointer;
+    }
+  
+    &:hover {
+      img {
+        transform: scale(1.3);
+      }
+    }
   }
 }
-  
-// h1 {
-//   width: 100%;
-//   color: $;
-//   text-transform: capitalize;
-//   text-align: center;
-//   font-size: 2em;
-//   letter-spacing: 1.5px;
-//   margin-bottom: 1em;
-// }
-  
-// h2 {
-//   width: 100%;
-//   color: $;
-//   font-size: 1.65em;
-//   margin-bottom: 0.5em;
-// }
-  
-// h3 {
-//   width: 100%;
-//   color: $;
-//   font-size: 1.3em;
-//   margin-bottom: 0.85em;
-// }
-  
-// Tablet
-// @media screen and (min-width: $breakpoint-small) {
-//   h1 {
-//     margin-bottom: 1.25em;
-//   }
-  
-//   h2 {
-//     margin-bottom: 0.75em;
-//   }
-  
-//   h3 {
-//     margin-bottom: 1em;
-//   }
-// }
-  
-// Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   h1 {
-//     margin-bottom: 1.5em;
-//   }
-  
-//   h2 {
-//     margin-bottom: 1em;
-//   }
-  
-//   h3 {
-//     margin-bottom: 1.15em;
-//   }
-// }

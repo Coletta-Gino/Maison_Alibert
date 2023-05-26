@@ -1,15 +1,55 @@
 //////////////// Skills ////////////////
 main {
   .skills {
-    @include triangles;
-    @include triangles-appear;
-    
     &__content {
       margin: 1.5em 0;
 
       // p {
       //   text-align: center;
       // }
+    }
+
+    &__icon {
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1.5em;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 75px;
+        }
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 0.5em;
+          font-size: 0.875em; // 14px
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+
+          &::before {
+            font-family: 'FontAwesome';
+            content: '\f111';
+            font-size: 7.5px;
+            margin-right: 1em;
+          }
+
+          &::after {
+            font-family: 'FontAwesome';
+            content: '\f111';
+            font-size: 7.5px;
+            margin-left: 1em;
+          }
+        }
+      }
     }
   }
 }
@@ -25,16 +65,73 @@ main {
         //   text-align: justify;
         // }
       }
+
+      &__icon {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        div {
+          margin-bottom: 0;
+  
+          img {
+            width: 100px;
+          }
+  
+          span {
+            margin-top: 0.75em;
+            letter-spacing: 3.75px;
+
+            &::before {
+              font-size: 8.75px;
+              margin-right: 0.5em;
+            }
+  
+            &::after {
+              font-size: 8.75px;
+              margin-left: 0.5em;
+            }
+          }
+        }
+      }
     }
   }
 }
     
-// // Desktop
-// @media screen and (min-width: $breakpoint-medium) {
-//   main {
-//     .skills {
-//       &__content {
-//       }
-//     }
-//   }
-// }
+// Desktop
+@media screen and (min-width: $breakpoint-medium) {
+  main {
+    .skills {
+      @include triangles;
+      @include triangles-appear;
+
+      &__content {
+        margin: 2em 0;
+      }
+
+      &__icon {
+        div {
+          img {
+            width: 125px;
+          }
+  
+          span {
+            margin-top: 1em;
+            font-size: 1.0625em; // 17px;
+            letter-spacing: 5px;
+
+            &::before {
+              font-size: 10px;
+              margin-right: 1em;
+            }
+  
+            &::after {
+              font-size: 10px;
+              margin-left: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
