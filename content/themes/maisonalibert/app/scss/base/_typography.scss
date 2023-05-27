@@ -40,6 +40,12 @@ a {
   font-family: $font-family-content;
 }
 
+.searchform {
+  input[type="search"] {
+    font-family: $font-family-content;
+  }
+}
+
 .skills {
   &__icon {
     span {

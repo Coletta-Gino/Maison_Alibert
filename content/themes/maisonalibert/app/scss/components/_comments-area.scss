@@ -129,12 +129,20 @@ main {
 
         h3 {
           color: $chinese-black;
+          text-transform: inherit;
         }
 
         a {
           font-size: 1.0625em; // 17px;
         }
       }
+    }
+
+    .comments__none {
+      width: 90%;
+      margin: 1.5em auto 1em;
+      font-size: 1.0625em; // 17px;
+      text-align: justify;
     }
 
     .comment__list {
@@ -239,6 +247,8 @@ main {
           margin: 0 auto;
 
           h3 {
+            text-transform: inherit;
+
             small {
               margin-left: 0.5em;
               text-transform: initial;
@@ -264,6 +274,10 @@ main {
     .comment-respond {
       width: 90%;
       margin: 0 auto;
+
+      h3 {
+        text-transform: inherit;
+      }
 
       .comment-form {
         display: flex;
@@ -430,6 +444,11 @@ main {
           width: 50%;
         }
       }
+
+      .comments__none {
+        width: 70%;
+        margin: 2.25em auto 1em;
+      }
   
       .comment__list {
         margin-top: 4.5em;
@@ -589,6 +608,12 @@ main {
             font-size: 1.25em; // 20px
           }
         }
+      }
+
+      .comments__none {
+        width: 45%;
+        margin: 1.5em auto 1em;
+        font-size: 1.25em; // 20px
       }
   
       .comment__list {

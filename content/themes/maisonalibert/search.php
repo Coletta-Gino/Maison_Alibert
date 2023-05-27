@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="results">
+<section class="results">
   <?php
     $count = $wp_query->found_posts;
     if ($count <= 1 ) {
@@ -11,7 +11,7 @@
     }
 
     if ($count > 0) {
-      $output = $count . ' résultat' . $several . ' pour la recherche';
+      $output = $count . ' Résultat' . $several . ' pour la recherche';
     }
     else {
       $output = 'Aucun résultat pour la recherche';
@@ -24,17 +24,17 @@
 
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <!-- If there is almost one result -->
-    <article class="results__found">
-      <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-    </article>
+    <div class="results__found">
+      <a href="<?php the_permalink(); ?>" class="needle-link"><?php the_title(); ?><span class="needle">&#129697;</span></a>
+    </div>
 
     <?php endwhile; wp_reset_query(); ?>
   <?php else : ?>
     <!-- If there is no result -->
-    <p>Votre recherche est infructueuse. Veuillez essayer avec d&apos;autres termes de recherche.</p>
+    <p>Désolé, mais rien ne correspond à vos critères de recherche. Veuillez réessayer avec d&apos;autres mots-clés.</p>
   <?php endif; ?>
 
   <a href="<?= home_url(); ?>" class="needle-link">Retour<span class="needle">&#129697;</span></a>
-</div>
+</section>
 
 <?php get_footer(); ?>

@@ -3,6 +3,10 @@ footer {
   .contact {
     margin: 0.75em 0;
 
+    h4 {
+      text-transform: inherit;
+    }
+
     li {
       display: flex;
       justify-content: center;

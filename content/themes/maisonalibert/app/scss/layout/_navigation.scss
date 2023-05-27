@@ -17,7 +17,7 @@ header {
   
     .logo {
       position: relative;
-      width: 100px;
+      width: 75px;
       height: auto;
       // top: 50%;
       // left: 50%;
@@ -32,14 +32,19 @@ header {
         }
       }
     }
+
+    ///// Searchform /////
+    .searchform {
+      display: none;
+    }
   
     ///// Menu Items /////
     .nav-links {
       position: absolute;
-      top: 124px;
+      top: 87px;
       right: 0;
       width: 100%;
-      height: calc(100vh - 124px);
+      height: calc(100vh - 87px);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -106,6 +111,53 @@ header {
           // }
         // }
       // }
+
+      ///// Searchform /////
+      .searchform {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        color: $alabaster;
+        background-color: $blue-sapphire;
+        box-shadow: inset 5px 5px 10px #174e56, 
+                    inset -5px -5px 10px #237482, 
+                    -1px -1px 2px #174e56, 
+                    1px 1px 2px #237482;
+        transform: translateY(-2px) rotateX(5deg);
+        padding: 0.25em;
+        border-radius: 7px;
+
+        input {
+          width: 90%;
+          background: transparent;
+          color: $alabaster;
+          font-size: 0.875em; // 14px
+          border: none;
+          outline: none;
+          cursor: text;
+
+          &::placeholder {
+            color: $alabaster;
+            opacity: 1;
+          }
+
+          // For IE10
+          &:-ms-input-placeholder {
+            color: $alabaster;
+          }
+        }
+
+        button {
+          width: 10%;
+          background: transparent;
+          color: $alabaster;
+          font-size: 0.875em; // 14px
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+      }
   
       ///// Menu Items /////
       .nav-links {
@@ -154,7 +206,7 @@ header {
   header {
     nav {
       .logo {
-        width: 125px;
+        width: 100px;
         height: auto;
       }
         
@@ -180,11 +232,18 @@ header {
             // }
           // }
         // }
+
+        ///// Searchform /////
+        .searchform {
+          width: 30%;
+          padding: 0.5em;
+          border-radius: 7.5px;
+        }
   
         ///// Menu Items /////
         .nav-links {
           position: unset;
-          width: 70%;
+          width: 50%;
           height: 0;
           display: flex;
           flex-direction: row;
@@ -221,7 +280,7 @@ header {
   header {
     nav {
       .logo {
-        width: 150px;
+        width: 125px;
         height: auto;
         // transition: 1s;
   
@@ -251,6 +310,23 @@ header {
             // }
           // }
         // }
+
+        ///// Searchform /////
+        .searchform {
+          width: 30%;
+          padding: 0.75em; 
+          border-radius: 8px;
+
+          input {
+            width: 95%;
+            font-size: 1.0625em !important; // 17px;
+          }
+
+          button {
+            width: initial;
+            font-size: 1.0625em !important; // 17px;
+          }
+        }
   
         ///// Menu Items /////
         .nav-links {

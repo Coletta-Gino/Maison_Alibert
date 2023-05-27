@@ -17,7 +17,7 @@ footer {
 @media screen and (min-width: $breakpoint-small) {
   footer {
     .copyright {
-      margin-top: 0;
+      margin-top: -2.25em;
     }
   }
 }
@@ -26,7 +26,7 @@ footer {
 @media screen and (min-width: $breakpoint-medium) {
   footer {
     .copyright {
-      margin-top: 0;
+      margin-top: -3em;
 
       p {
         font-size: 1em; // 16px;

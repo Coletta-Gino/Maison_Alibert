@@ -1,7 +1,7 @@
 //////////////// SIMPLIFIED LOGO ////////////////
 footer {
   .simplified-logo {
-    width: 50px;
+    width: 100px;
     height: auto;
 
     img {
@@ -15,7 +15,7 @@ footer {
 @media screen and (min-width: $breakpoint-small) {
   footer {
     .simplified-logo {
-      width: 62.5px;
+      width: 125px;
       height: auto;
     }
   }
@@ -25,7 +25,7 @@ footer {
 @media screen and (min-width: $breakpoint-medium) {
   footer {
     .simplified-logo {
-      width: 75px;
+      width: 150px;
       height: auto;
     }
   }
