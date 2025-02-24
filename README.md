@@ -1,5 +1,6 @@
 # Maison Alibert's Website
-This repository contains the code for the [Maison Alibert](https://maisonalibert.fr/) website, an online platform designed to in the realm of saddlery and leather goods. The website allows visitors to explore a world of craftsmanship and heritage through custom made creations.
+
+This repository contains the code for the [Maison Alibert](https://maisonalibert.fr/) website, an online platform dedicated to the world of saddlery and leather goods craftsmanship. The website serves as a digital gateway, allowing visitors to explore Maison Alibert’s heritage, expertise, and custom-made creations.
 
 ## Table of Contents
 - [Maison Alibert's Website](#maison-aliberts-website)
@@ -10,22 +11,27 @@ This repository contains the code for the [Maison Alibert](https://maisonalibert
   - [Technologies Used](#technologies-used)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Screenshots](#screenshots)
+    - [Mobile Version](#mobile-version)
+    - [Tablet Version](#tablet-version)
+    - [Desktop Version](#desktop-version)
+  - [Contact](#contact)
   - [Credits](#credits)
 
 ## Introduction
-Maison Alibert is a saddlery and leather goods workshop specialized in custom creation, restoration, and crafting of small leather goods. The website serves as a digital storefront, welcoming users to see the creations of Maison Alibert.
+Maison Alibert is an artisanal workshop specializing in the creation, restoration, and crafting of high-quality leather goods. This website serves as its online showcase, providing customers with an immersive look into the artistry, craftsmanship, and unique designs that define Maison Alibert.
 
 ## Features
-- **Homepage**: Experience the essence of Maison Alibert with an introduction to its heritage, a showcase of its latest products with a call-to-action directing visitors to explore further, and a detailed section highlighting the exceptional skills and techniques employed by Maison Alibert.
-- **Product Pages**: Discover its full range of products on dedicated pages, featuring pagination for seamless navigation, category filtering for easy exploration, and sorting options by date or price in ascending or descending order. The filtering and sorting functionalities persist even during the utilisation of the pagination.
-- **Product Detail Pages**: Delve deeper into individual products with immersive detail pages, presenting images, available colors, comprehensive descriptions, pricing information, and a review system allowing customers to share their feedback through star ratings. Comments are nestable, providing a holistic view of customer opinions, including total reviews, average ratings, and detailed breakdowns of each review.
-- **Events Page**: Stay informed about upcoming events featuring Maison Alibert, including event names, dates, locations, and entry fees.
+- **Homepage**: A visually engaging introduction to Maison Alibert’s heritage, showcasing its latest products, a call-to-action for visitors to explore further, and a section highlighting the artisanal techniques used in leatherworking.
+- **Product Pages**: A dedicated section displaying the full range of Maison Alibert’s handcrafted products, featuring pagination for easy navigation, category filtering, and sorting options by date or price. The filtering and sorting functionalities remain persistent even when navigating through paginated pages.
+- **Product Detail Pages**: Individual product pages offering high-quality images, available colors, detailed descriptions, pricing information, and a review system allowing customers to share feedback via star ratings. The review system includes nested comments, displaying total reviews, average ratings, and a breakdown of customer opinions.
+- **Events Page**: A section listing upcoming events featuring Maison Alibert, including event names, dates, locations, and entry fees.
 
 ## Pages
-1. **Homepage**: Introduces Maison Alibert, showcases latest products, and highlights artisanal skills.
-2. **Products**: Displays the complete range of products with filtering, sorting, and pagination functionalities.
-3. **Product Detail**: Provides in-depth information about individual products and facilitates customer reviews and comments.
-4. **Events**: Announces upcoming events featuring Maison Alibert, including event details and entry information.
+1. **Homepage**: Introduction to Maison Alibert, latest products, and craftsmanship details.
+2. **Products**: Full product catalog with filtering, sorting, and pagination.
+3. **Product Detail**: In-depth product descriptions, customer reviews, and ratings.
+4. **Events**: Information on upcoming events featuring Maison Alibert.
 
 ## Technologies Used
 - HTML
@@ -41,23 +47,38 @@ Maison Alibert is a saddlery and leather goods workshop specialized in custom cr
 - Composer
 
 ## Installation
-1. Make sure you have composer, npm, and webpack installed on your machine.
-2. Clone the repository
+1. Ensure that you have Composer, NPM, and Webpack installed on your system.
+2. Clone the repository.
 3. Navigate to the project directory in your terminal.
-4. Run `composer install` to install WordPress, its plugins, its themes.
+4. Run `composer install` to install WordPress, plugins, and themes.
 5. Set up your MySQL database.
-6. Update the database connection details in the `wp-config.php` file (copy of `wp-config-sample.php`).
+6. Update the database connection details in the `wp-config.php` file (use a copy of `wp-config-sample.php`).
 7. Navigate to the theme directory in your terminal.
 8. Run `npm install` to install dependencies.
 
 ## Usage
-1. Configure the WordPress back-office to manage content dynamically.
-2. Customize the theme settings and content to reflect Maison Alibert's branding and products.
-3. **Please note that this code is provided as an example of our capabilities and cannot be hosted online or used for commercial purposes without the consent of Maison Alibert and XiaoDev.**
+1. Configure the WordPress back-office to dynamically manage content.
+2. Customize theme settings and content to align with Maison Alibert’s branding and products.
+3. **This code is provided as an example of our capabilities and may not be hosted online or used for commercial purposes without the explicit consent of both Maison Alibert and XiaoDev.**
+
+## Screenshots
+Here are some previews of the website on different devices:
+
+### Mobile Version
+![Maison Alibert - Mobile](MaisonAlibert_Mobile.png)
+
+### Tablet Version
+![Maison Alibert - Tablet](MaisonAlibert_Tablet.png)
+
+### Desktop Version
+![Maison Alibert - Desktop](MaisonAlibert_Desktop.png)
+
+## Contact
+For inquiries regarding this project, please reach out via email:  
+📩 contact@xiaodev.fr
 
 ## Credits
 The Maison Alibert's Website was created and maintained by XiaoDev.
 
 ---
-
-If you have any questions or feedback, please don't hesitate to [reach out](mailto:&#99;o&#110;&#116;%61%63t&#64;&#120;&#105;a&#111;&#100;%65%76%2e&#102;%72).
+If you have any questions or feedback, please [reach out](mailto:&#99;o&#110;&#116;%61%63t&#64;&#120;&#105;a&#111;&#100;%65%76%2e&#102;%72).
